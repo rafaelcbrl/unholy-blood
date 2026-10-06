@@ -56,6 +56,11 @@ const CAMINHO_FRONT_END =
         "Front-End"
     );
 
+    const CAMINHO_IMAGENS =
+    path.join(
+        CAMINHO_RAIZ_PROJETO,
+        "Imagens"
+    );
 
 /* ============================================================
    03. MIDDLEWARES
@@ -108,6 +113,12 @@ app.use(
     )
 );
 
+app.use(
+    "/Imagens",
+    express.static(
+        CAMINHO_IMAGENS
+    )
+);
 
 /* ============================================================
    04. FUNÇÕES DO BANCO DE DADOS
