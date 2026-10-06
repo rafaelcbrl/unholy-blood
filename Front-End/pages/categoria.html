@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURAÇÕES BÁSICAS
+         ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Categoria do Arquivo Oficial da Guilda Unholy Blood."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+
+    <!-- =====================================================
+         TÍTULO
+         ===================================================== -->
+
+    <title>
+        Categoria | Unholy Blood
+    </title>
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/categoria.css"
+    >
+
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         FUNDO DECORATIVO
+         ===================================================== -->
+
+    <div
+        class="fundo-categoria"
+        aria-hidden="true"
+    >
+
+        <div class="fundo-brilho"></div>
+
+        <div class="fundo-textura"></div>
+
+        <div class="fundo-vinheta"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header class="cabecalho-categoria">
+
+
+        <!-- -------------------------------------------------
+             VOLTAR PARA O CATÁLOGO
+             ------------------------------------------------- -->
+
+        <a
+            href="catalogo.html"
+            class="botao-voltar"
+            aria-label="Voltar para o catálogo"
+        >
+
+            <span
+                class="botao-voltar-icone"
+                aria-hidden="true"
+            >
+                ←
+            </span>
+
+            <span>
+                VOLTAR AO ARQUIVO
+            </span>
+
+        </a>
+
+
+
+        <!-- -------------------------------------------------
+             IDENTIDADE
+             ------------------------------------------------- -->
+
+        <div class="identidade-categoria">
+
+
+            <span class="identidade-linha">
+                ARQUIVO OFICIAL
+            </span>
+
+
+            <span class="identidade-nome">
+                UNHOLY BLOOD
+            </span>
+
+
+            <span class="identidade-subtitulo">
+                REGISTRO DE CATEGORIA
+            </span>
+
+
+        </div>
+
+
+
+        <!-- -------------------------------------------------
+             LOGO
+             ------------------------------------------------- -->
+
+        <div class="logo-categoria">
+
+            <img
+                src="../../Imagens/logo/unholy-blood.png"
+                alt="Logo da Unholy Blood"
+            >
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main class="conteudo-categoria">
+
+
+        <!-- =================================================
+             APRESENTAÇÃO DA CATEGORIA
+             ================================================= -->
+
+        <section
+            class="apresentacao-categoria"
+            aria-labelledby="titulo-categoria"
+        >
+
+
+            <!-- ---------------------------------------------
+                 MARCAÇÃO SUPERIOR
+                 --------------------------------------------- -->
+
+            <div class="marcacao-categoria">
+
+
+                <span class="marcacao-linha"></span>
+
+
+                <span class="marcacao-texto">
+                    REGISTRO DO ARQUIVO
+                </span>
+
+
+                <span class="marcacao-linha"></span>
+
+
+            </div>
+
+
+
+            <!-- ---------------------------------------------
+                 NOME DA CATEGORIA
+                 --------------------------------------------- -->
+
+            <h1 id="titulo-categoria">
+                Carregando...
+            </h1>
+
+
+
+            <!-- ---------------------------------------------
+                 DESCRIÇÃO
+                 --------------------------------------------- -->
+
+            <p
+                id="descricao-categoria"
+                class="descricao-categoria"
+            >
+                Consultando os registros desta categoria...
+            </p>
+
+
+
+            <!-- ---------------------------------------------
+                 DIVISOR
+                 --------------------------------------------- -->
+
+            <div
+                class="divisor-categoria"
+                aria-hidden="true"
+            >
+
+                <span></span>
+
+                <strong>✦</strong>
+
+                <span></span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAINEL DE CONTROLE
+             ================================================= -->
+
+        <section
+            class="painel-controle-categoria"
+            aria-label="Filtros da categoria"
+        >
+
+
+            <!-- ---------------------------------------------
+                 PESQUISA
+                 --------------------------------------------- -->
+
+            <div class="campo-pesquisa-categoria">
+
+
+                <label
+                    for="pesquisa-item-categoria"
+                >
+                    PESQUISAR ITEM
+                </label>
+
+
+                <div class="campo-pesquisa-wrapper">
+
+
+                    <span
+                        class="icone-pesquisa"
+                        aria-hidden="true"
+                    >
+                        ⌕
+                    </span>
+
+
+                    <input
+                        type="search"
+                        id="pesquisa-item-categoria"
+                        placeholder="Pesquisar no arquivo..."
+                        autocomplete="off"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ---------------------------------------------
+                 FILTRO DE RARIDADE
+                 --------------------------------------------- -->
+
+            <div class="filtro-categoria">
+
+
+                <label
+                    for="filtro-raridade-categoria"
+                >
+                    RARIDADE
+                </label>
+
+
+                <select
+                    id="filtro-raridade-categoria"
+                >
+
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                    <option value="comum">
+                        Comum
+                    </option>
+
+                    <option value="incomum">
+                        Incomum
+                    </option>
+
+                    <option value="raro">
+                        Raro
+                    </option>
+
+                    <option value="epico">
+                        Épico
+                    </option>
+
+                    <option value="lendario">
+                        Lendário
+                    </option>
+
+                    <option value="mitico">
+                        Mítico
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- ---------------------------------------------
+                 FILTRO DE TEMPORADA
+                 --------------------------------------------- -->
+
+            <div class="filtro-categoria">
+
+
+                <label
+                    for="filtro-temporada-categoria"
+                >
+                    TEMPORADA
+                </label>
+
+
+                <select
+                    id="filtro-temporada-categoria"
+                >
+
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- ---------------------------------------------
+                 FILTRO DE STATUS
+                 --------------------------------------------- -->
+
+            <div class="filtro-categoria">
+
+
+                <label
+                    for="filtro-status-categoria"
+                >
+                    STATUS
+                </label>
+
+
+                <select
+                    id="filtro-status-categoria"
+                >
+
+                    <option value="todos">
+                        Todos
+                    </option>
+
+                    <option value="armazem">
+                        No Armazém
+                    </option>
+
+                    <option value="jogador">
+                        Em posse de jogador
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CABEÇALHO DA LISTAGEM
+             ================================================= -->
+
+        <section
+            class="cabecalho-itens"
+            aria-label="Informações dos itens"
+        >
+
+
+            <!-- ---------------------------------------------
+                 TÍTULO
+                 --------------------------------------------- -->
+
+            <div class="titulo-listagem">
+
+
+                <span class="titulo-listagem-pre">
+                    REGISTROS ENCONTRADOS
+                </span>
+
+
+                <h2>
+                    Itens da Categoria
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- ---------------------------------------------
+                 CONTADOR
+                 --------------------------------------------- -->
+
+            <div
+                class="contador-itens"
+                id="contador-itens"
+            >
+                00 ITENS
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             GRADE DE ITENS
+             ================================================= -->
+
+        <section
+            class="grade-itens"
+            id="grade-itens"
+            aria-label="Itens registrados"
+        >
+
+            <!--
+                Os cards dos itens serão criados
+                dinamicamente pelo categoria.js.
+            -->
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ESTADO VAZIO
+             ================================================= -->
+
+        <section
+            class="estado-vazio-categoria"
+            id="estado-vazio-categoria"
+            hidden
+        >
+
+
+            <div
+                class="estado-vazio-icone"
+                aria-hidden="true"
+            >
+                ✦
+            </div>
+
+
+            <span class="estado-vazio-pre">
+                ARQUIVO SEM RESULTADOS
+            </span>
+
+
+            <h3>
+                Nenhum item encontrado.
+            </h3>
+
+
+            <p>
+                Não existem registros correspondentes
+                aos filtros selecionados.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CAMINHO DO ARQUIVO
+             ================================================= -->
+
+        <div
+            class="caminho-arquivo"
+            aria-label="Localização no arquivo"
+        >
+
+
+            <span>
+                UNHOLY BLOOD
+            </span>
+
+
+            <strong>
+                /
+            </strong>
+
+
+            <span>
+                COLLECTION
+            </span>
+
+
+            <strong>
+                /
+            </strong>
+
+
+            <span id="caminho-categoria">
+                CATEGORIA
+            </span>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer class="rodape-categoria">
+
+
+        <div class="rodape-linha"></div>
+
+
+        <div class="rodape-conteudo">
+
+
+            <div class="rodape-identidade">
+
+
+                <span>
+                    UNHOLY BLOOD
+                </span>
+
+
+                <small>
+                    ARQUIVO OFICIAL DA GUILDA
+                </small>
+
+
+            </div>
+
+
+
+            <div class="rodape-simbolo">
+                ✦
+            </div>
+
+
+
+            <div class="rodape-direitos">
+
+
+                <span>
+                    REGISTRO DE COLEÇÃO
+                </span>
+
+
+                <small>
+                    TODOS OS DIREITOS RESERVADOS
+                </small>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/categoria.js"
+    ></script>
+
+
+</body>
+
+</html>

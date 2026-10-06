@@ -1,0 +1,2210 @@
+/* ============================================================
+   UNHOLY BLOOD
+   PAINEL ADMINISTRATIVO
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIÁVEIS
+   ============================================================ */
+
+:root {
+
+    --preto-absoluto: #040404;
+    --preto: #080808;
+    --preto-suave: #0d0d0d;
+
+    --cinza-escuro: #151515;
+    --cinza: #222222;
+    --cinza-medio: #555555;
+    --cinza-claro: #858585;
+
+    --branco: #f1ede6;
+    --branco-suave: #c9c2b7;
+
+    --vermelho-profano: #751018;
+    --vermelho-intenso: #a71924;
+    --vermelho-claro: #c92c37;
+
+    --dourado: #b59a62;
+    --dourado-claro: #d5bd82;
+
+    --borda: rgba(181, 154, 98, 0.22);
+    --borda-forte: rgba(181, 154, 98, 0.50);
+
+    --transicao: 0.3s ease;
+
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(117, 16, 24, 0.10),
+            transparent 35%
+        ),
+        var(--preto-absoluto);
+
+    color:
+        var(--branco);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+/* ============================================================
+   3. FUNDO
+   ============================================================ */
+
+.fundo-admin {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(117, 16, 24, 0.08),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #080808 0%,
+            #040404 100%
+        );
+
+}
+
+
+.textura-admin {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+        radial-gradient(
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        5px 5px;
+
+}
+
+
+/* ============================================================
+   4. CABEÇALHO
+   ============================================================ */
+
+.cabecalho-admin {
+
+    width:
+        min(1400px, 92%);
+
+    min-height:
+        110px;
+
+    margin:
+        0 auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items:
+        center;
+
+    gap:
+        30px;
+
+    border-bottom:
+        1px solid
+        var(--borda);
+
+}
+
+
+.voltar-admin {
+
+    justify-self:
+        start;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        12px 18px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+
+    text-decoration:
+        none;
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        color var(--transicao),
+        background var(--transicao);
+
+}
+
+
+.voltar-admin:hover {
+
+    transform:
+        translateX(-4px);
+
+    border-color:
+        var(--borda-forte);
+
+    background:
+        rgba(181, 154, 98, 0.06);
+
+    color:
+        var(--branco);
+
+}
+
+
+.identidade-admin {
+
+    text-align:
+        center;
+
+}
+
+
+.pre-titulo-admin {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        5px;
+
+}
+
+
+.identidade-admin h1 {
+
+    color:
+        var(--branco);
+
+    font-size:
+        clamp(22px, 3vw, 34px);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        8px;
+
+}
+
+
+.subtitulo-admin {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.espaco-cabecalho {
+
+    min-height:
+        1px;
+
+}
+
+
+/* ============================================================
+   5. CONTEÚDO
+   ============================================================ */
+
+.conteudo-admin {
+
+    width:
+        min(1150px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        90px 0
+        120px;
+
+}
+
+
+.introducao-admin {
+
+    max-width:
+        780px;
+
+    margin:
+        0 auto
+        70px;
+
+    text-align:
+        center;
+
+}
+
+
+.etiqueta-admin {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        16px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        4px;
+
+}
+
+
+.introducao-admin h2 {
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--branco);
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    font-weight:
+        400;
+
+    line-height:
+        1.1;
+
+}
+
+
+.introducao-admin p {
+
+    max-width:
+        650px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* ============================================================
+   6. BOTÕES PRINCIPAIS
+   ============================================================ */
+
+.painel-opcoes-admin {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.opcao-admin {
+
+    position:
+        relative;
+
+    min-height:
+        190px;
+
+    padding:
+        34px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        24px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.008)
+        );
+
+    color:
+        var(--branco);
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+.opcao-admin::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        3px;
+
+    height:
+        100%;
+
+    background:
+        var(--vermelho-intenso);
+
+    transform:
+        scaleY(0);
+
+    transform-origin:
+        bottom;
+
+    transition:
+        transform var(--transicao);
+
+}
+
+
+.opcao-admin:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--borda-forte);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(117, 16, 24, 0.12),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.60);
+
+}
+
+
+.opcao-admin:hover::before {
+
+    transform:
+        scaleY(1);
+
+}
+
+
+.opcao-admin.ativo {
+
+    border-color:
+        rgba(181, 154, 98, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(117, 16, 24, 0.12),
+            rgba(181, 154, 98, 0.04)
+        );
+
+}
+
+
+.opcao-admin.ativo::before {
+
+    transform:
+        scaleY(1);
+
+}
+
+
+.icone-opcao-admin {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(181, 154, 98, 0.30);
+
+    background:
+        rgba(181, 154, 98, 0.04);
+
+    color:
+        var(--dourado);
+
+    font-size:
+        25px;
+
+    transition:
+        color var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+
+}
+
+
+.opcao-admin:hover .icone-opcao-admin,
+.opcao-admin.ativo .icone-opcao-admin {
+
+    color:
+        var(--dourado-claro);
+
+    border-color:
+        rgba(181, 154, 98, 0.60);
+
+    background:
+        rgba(181, 154, 98, 0.08);
+
+}
+
+
+.conteudo-opcao-admin {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.titulo-opcao-admin {
+
+    color:
+        var(--branco);
+
+    font-size:
+        22px;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.descricao-opcao-admin {
+
+    max-width:
+        400px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.seta-opcao-admin {
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        22px;
+
+    transition:
+        transform var(--transicao),
+        color var(--transicao);
+
+}
+
+
+.opcao-admin:hover .seta-opcao-admin,
+.opcao-admin.ativo .seta-opcao-admin {
+
+    color:
+        var(--dourado-claro);
+
+    transform:
+        translateX(6px);
+
+}
+
+
+/* ============================================================
+   7. MENSAGENS
+   ============================================================ */
+
+.mensagem-admin {
+
+    min-height:
+        0;
+
+    margin-top:
+        0;
+
+    padding:
+        0;
+
+    opacity:
+        0;
+
+    border:
+        1px solid
+        transparent;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+    text-align:
+        center;
+
+    transition:
+        opacity var(--transicao),
+        margin var(--transicao),
+        padding var(--transicao);
+
+}
+
+
+.mensagem-admin.visivel {
+
+    min-height:
+        48px;
+
+    margin-top:
+        25px;
+
+    padding:
+        14px 20px;
+
+    opacity:
+        1;
+
+}
+
+
+.mensagem-admin.sucesso {
+
+    border-color:
+        rgba(76, 150, 91, 0.35);
+
+    background:
+        rgba(76, 150, 91, 0.08);
+
+    color:
+        #9fd0a6;
+
+}
+
+
+.mensagem-admin.erro {
+
+    border-color:
+        rgba(199, 42, 53, 0.40);
+
+    background:
+        rgba(199, 42, 53, 0.08);
+
+    color:
+        #e78a91;
+
+}
+
+
+/* ============================================================
+   8. ÁREA DINÂMICA
+   ============================================================ */
+
+.area-cadastro-admin {
+
+    margin-top:
+        45px;
+
+}
+
+
+.area-cadastro-admin:empty {
+
+    display:
+        none;
+
+}
+
+
+/* ============================================================
+   9. FORMULÁRIO
+   ============================================================ */
+
+.formulario-admin {
+
+    padding:
+        42px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.008)
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.40);
+
+    animation:
+        aparecerFormulario
+        0.4s ease;
+
+}
+
+
+@keyframes aparecerFormulario {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   10. CABEÇALHO DO FORMULÁRIO
+   ============================================================ */
+
+.cabecalho-formulario {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    margin-bottom:
+        35px;
+
+    padding-bottom:
+        25px;
+
+    border-bottom:
+        1px solid
+        rgba(181, 154, 98, 0.12);
+
+}
+
+
+.cabecalho-formulario h3 {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--branco);
+
+    font-size:
+        28px;
+
+    font-weight:
+        400;
+
+}
+
+
+.cabecalho-formulario p {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.botao-fechar-formulario {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    flex-shrink:
+        0;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        transparent;
+
+    color:
+        var(--cinza-claro);
+
+    cursor:
+        pointer;
+
+    font-size:
+        20px;
+
+    transition:
+        color var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+
+}
+
+
+.botao-fechar-formulario:hover {
+
+    color:
+        var(--branco);
+
+    border-color:
+        var(--vermelho-intenso);
+
+    background:
+        rgba(167, 25, 36, 0.10);
+
+}
+
+
+/* ============================================================
+   11. GRID DO FORMULÁRIO
+   ============================================================ */
+
+.grid-formulario {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        25px 22px;
+
+}
+
+
+.campo-admin {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        9px;
+
+}
+
+
+.campo-admin.largo {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+.campo-admin label {
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.campo-admin label span {
+
+    color:
+        var(--vermelho-claro);
+
+}
+
+
+.campo-admin input,
+.campo-admin select,
+.campo-admin textarea {
+
+    width:
+        100%;
+
+    padding:
+        14px 15px;
+
+    outline:
+        none;
+
+    border:
+        1px solid
+        rgba(181, 154, 98, 0.18);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    color:
+        var(--branco);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    transition:
+        border-color var(--transicao),
+        background var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+.campo-admin input:focus,
+.campo-admin select:focus,
+.campo-admin textarea:focus {
+
+    border-color:
+        rgba(181, 154, 98, 0.60);
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(181, 154, 98, 0.06);
+
+}
+
+
+.campo-admin input::placeholder,
+.campo-admin textarea::placeholder {
+
+    color:
+        #555555;
+
+}
+
+
+.campo-admin textarea {
+
+    min-height:
+        140px;
+
+    resize:
+        vertical;
+
+    line-height:
+        1.7;
+
+}
+
+
+.campo-admin select {
+
+    cursor:
+        pointer;
+
+}
+
+
+.campo-admin select option {
+
+    background:
+        #101010;
+
+    color:
+        var(--branco);
+
+}
+
+
+.campo-ajuda-admin {
+
+    margin-top:
+        1px;
+
+    color:
+        #666666;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.campo-admin.desativado {
+
+    opacity:
+        0.45;
+
+}
+
+
+.campo-admin input:disabled,
+.campo-admin select:disabled {
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* ============================================================
+   12. PRÉVIA DA IMAGEM
+   ============================================================ */
+
+.preview-imagem-admin {
+
+    min-height:
+        180px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(181, 154, 98, 0.15);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(117, 16, 24, 0.12),
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+.preview-imagem-admin img {
+
+    display:
+        none;
+
+    max-width:
+        100%;
+
+    max-height:
+        240px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.preview-imagem-admin.tem-imagem img {
+
+    display:
+        block;
+
+}
+
+
+.preview-imagem-admin span {
+
+    color:
+        #555555;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.preview-imagem-admin.tem-imagem span {
+
+    display:
+        none;
+
+}
+
+
+/* ============================================================
+   13. AÇÕES DO FORMULÁRIO
+   ============================================================ */
+
+.acoes-formulario {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        12px;
+
+    margin-top:
+        35px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        rgba(181, 154, 98, 0.12);
+
+}
+
+
+.botao-formulario {
+
+    padding:
+        13px 24px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        transparent;
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    transition:
+        background var(--transicao),
+        border-color var(--transicao),
+        color var(--transicao),
+        transform var(--transicao);
+
+}
+
+
+.botao-formulario:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--borda-forte);
+
+    color:
+        var(--branco);
+
+}
+
+
+.botao-formulario.principal {
+
+    border-color:
+        var(--vermelho-intenso);
+
+    background:
+        var(--vermelho-profano);
+
+    color:
+        var(--branco);
+
+}
+
+
+.botao-formulario.principal:hover {
+
+    border-color:
+        var(--vermelho-claro);
+
+    background:
+        var(--vermelho-intenso);
+
+}
+
+
+/* ============================================================
+   14. SEÇÕES DE REGISTROS
+   ============================================================ */
+
+.secao-registros-admin {
+
+    margin-top:
+        90px;
+
+}
+
+
+.cabecalho-secao-admin {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    margin-bottom:
+        30px;
+
+    padding-bottom:
+        18px;
+
+    border-bottom:
+        1px solid
+        rgba(181, 154, 98, 0.15);
+
+}
+
+
+.cabecalho-secao-admin h2 {
+
+    color:
+        var(--branco);
+
+    font-size:
+        30px;
+
+    font-weight:
+        400;
+
+}
+
+
+.contador-registros-admin {
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid
+        var(--borda);
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* ============================================================
+   15. GRID DOS REGISTROS
+   ============================================================ */
+
+.grade-registros-admin {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+/* ============================================================
+   16. CARDS
+   ============================================================ */
+
+.card-registro-admin {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--borda);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+.card-registro-admin:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--borda-forte);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+.imagem-registro-admin {
+
+    height:
+        150px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(117, 16, 24, 0.13),
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+.imagem-registro-admin img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+}
+
+
+.placeholder-registro-admin {
+
+    color:
+        #4a4a4a;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.conteudo-registro-admin {
+
+    padding:
+        20px;
+
+}
+
+
+.tipo-registro-admin {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.conteudo-registro-admin h3 {
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--branco);
+
+    font-size:
+        19px;
+
+    font-weight:
+        400;
+
+}
+
+
+.conteudo-registro-admin p {
+
+    min-height:
+        38px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.info-extra-registro {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+    margin-top:
+        12px;
+
+}
+
+
+.tag-registro {
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(181, 154, 98, 0.14);
+
+    color:
+        #8e887e;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        0.8px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.acoes-registro-admin {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    margin-top:
+        18px;
+
+}
+
+
+.botao-registro {
+
+    flex:
+        1;
+
+    padding:
+        9px 8px;
+
+    border:
+        1px solid
+        rgba(181, 154, 98, 0.18);
+
+    background:
+        transparent;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    transition:
+        color var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+
+}
+
+
+.botao-registro:hover {
+
+    color:
+        var(--branco);
+
+    border-color:
+        var(--borda-forte);
+
+    background:
+        rgba(181, 154, 98, 0.05);
+
+}
+
+
+.botao-registro.excluir:hover {
+
+    border-color:
+        var(--vermelho-intenso);
+
+    background:
+        rgba(167, 25, 36, 0.08);
+
+    color:
+        #e78a91;
+
+}
+
+
+/* ============================================================
+   17. ESTADO VAZIO
+   ============================================================ */
+
+.estado-vazio-admin {
+
+    padding:
+        65px 25px;
+
+    border:
+        1px dashed
+        rgba(181, 154, 98, 0.15);
+
+    text-align:
+        center;
+
+}
+
+
+.estado-vazio-icone {
+
+    display:
+        block;
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--dourado);
+
+    font-size:
+        30px;
+
+}
+
+
+.estado-vazio-admin h3 {
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--branco);
+
+    font-size:
+        20px;
+
+    font-weight:
+        400;
+
+}
+
+
+.estado-vazio-admin p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ============================================================
+   18. RODAPÉ
+   ============================================================ */
+
+.rodape-admin {
+
+    width:
+        min(1400px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        30px 0
+        45px;
+
+    border-top:
+        1px solid
+        rgba(181, 154, 98, 0.12);
+
+    text-align:
+        center;
+
+}
+
+
+.rodape-admin p {
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--dourado);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        5px;
+
+}
+
+
+.rodape-admin span {
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+/* ============================================================
+   19. ACESSIBILIDADE
+   ============================================================ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline:
+        2px solid
+        var(--dourado);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* ============================================================
+   20. RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .painel-opcoes-admin {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .grade-registros-admin {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .cabecalho-admin {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            25px 0;
+
+        gap:
+            20px;
+
+    }
+
+
+    .voltar-admin {
+
+        justify-self:
+            center;
+
+        order:
+            2;
+
+    }
+
+
+    .identidade-admin {
+
+        order:
+            1;
+
+    }
+
+
+    .espaco-cabecalho {
+
+        display:
+            none;
+
+    }
+
+
+    .conteudo-admin {
+
+        padding:
+            65px 0
+            90px;
+
+    }
+
+
+    .grid-formulario {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .campo-admin.largo {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .cabecalho-secao-admin {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .conteudo-admin {
+
+        width:
+            90%;
+
+    }
+
+
+    .formulario-admin {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .opcao-admin {
+
+        min-height:
+            auto;
+
+        padding:
+            25px;
+
+        grid-template-columns:
+            auto
+            1fr;
+
+    }
+
+
+    .seta-opcao-admin {
+
+        display:
+            none;
+
+    }
+
+
+    .icone-opcao-admin {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+        font-size:
+            20px;
+
+    }
+
+
+    .titulo-opcao-admin {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .grade-registros-admin {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .cabecalho-formulario {
+
+        gap:
+            15px;
+
+    }
+
+
+    .cabecalho-formulario h3 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .acoes-formulario {
+
+        flex-direction:
+            column-reverse;
+
+    }
+
+
+    .botao-formulario {
+
+        width:
+            100%;
+
+    }
+
+}

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =========================================================
+         CONFIGURAÇÕES DO DOCUMENTO
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Arquivo oficial da guilda Unholy Blood."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>
+        Unholy Blood | Arquivo da Guilda
+    </title>
+
+
+    <!-- =========================================================
+         FOLHA DE ESTILOS PRINCIPAL
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         FUNDO GERAL DO SITE
+         
+         Essas camadas serão utilizadas posteriormente pelo CSS
+         para criar iluminação, textura e profundidade.
+    ========================================================== -->
+
+    <div class="fundo-site">
+
+        <div class="fundo-brilho fundo-brilho-1"></div>
+
+        <div class="fundo-brilho fundo-brilho-2"></div>
+
+        <div class="fundo-brilho fundo-brilho-3"></div>
+
+        <div class="textura-fundo"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MENU LATERAL
+    ========================================================== -->
+
+    <aside
+        class="menu-lateral"
+        id="menu-lateral"
+        aria-label="Menu principal"
+    >
+
+        <!-- Botão fechar -->
+
+        <button
+            class="botao-fechar-menu"
+            id="botao-fechar-menu"
+            type="button"
+            aria-label="Fechar menu"
+        >
+
+            <span></span>
+
+            <span></span>
+
+        </button>
+
+
+        <!-- -----------------------------------------------------
+             IDENTIDADE DO MENU
+        ------------------------------------------------------ -->
+
+        <div class="menu-identidade">
+
+            <div class="menu-logo-container">
+
+                <img
+                    src="../Imagens/logo/unholy-blood.png"
+                    alt="Símbolo da Unholy Blood"
+                    class="menu-logo"
+                >
+
+            </div>
+
+
+            <div class="menu-titulo">
+
+                <span class="menu-subtitulo">
+                    ARQUIVO DA
+                </span>
+
+                <h2>
+                    UNHOLY BLOOD
+                </h2>
+
+                <span class="menu-linha-decorativa"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             NAVEGAÇÃO PRINCIPAL
+        ------------------------------------------------------ -->
+
+        <nav
+            class="menu-navegacao"
+            aria-label="Navegação principal"
+        >
+
+            <!-- Início -->
+
+            <a
+                href="#inicio"
+                class="menu-item menu-item-ativo"
+            >
+
+                <span class="menu-item-icone">
+                    ⌂
+                </span>
+
+                <span class="menu-item-texto">
+                    Início
+                </span>
+
+            </a>
+
+
+            <!-- Cadastro / Administração -->
+
+            <a
+                href="pages/admin.html"
+                class="menu-item"
+            >
+
+                <span class="menu-item-icone">
+                    ✦
+                </span>
+
+                <span class="menu-item-texto">
+                    Cadastrar Itens
+                </span>
+
+            </a>
+
+
+            <!-- Coleção -->
+
+            <a
+                href="pages/catalogo.html"
+                class="menu-item"
+            >
+
+                <span class="menu-item-icone">
+                    ❖
+                </span>
+
+                <span class="menu-item-texto">
+                    Coleção
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- -----------------------------------------------------
+             FRASE DO MENU
+        ------------------------------------------------------ -->
+
+        <div class="menu-rodape">
+
+            <span class="menu-rodape-linha"></span>
+
+            <p>
+
+                ONDE A GRAÇA NOS ABANDONOU,
+                <br>
+                NOSSO SANGUE DESPERTOU.
+
+            </p>
+
+            <span class="menu-versao">
+                UNHOLY BLOOD
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         SOBREPOSIÇÃO DO MENU
+         
+         Essa camada escurece o restante do site quando o menu
+         lateral estiver aberto.
+    ========================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menu-overlay"
+    ></div>
+
+
+    <!-- =========================================================
+         CABEÇALHO PRINCIPAL
+    ========================================================== -->
+
+    <header
+        class="cabecalho"
+        id="cabecalho"
+    >
+
+
+        <!-- -----------------------------------------------------
+             LOGO
+        ------------------------------------------------------ -->
+
+        <a
+            href="#inicio"
+            class="cabecalho-logo"
+            aria-label="Voltar para o início"
+        >
+
+            <img
+                src="../Imagens/logo/unholy-blood.png"
+                alt="Símbolo da Unholy Blood"
+            >
+
+        </a>
+
+
+        <!-- -----------------------------------------------------
+             IDENTIDADE
+        ------------------------------------------------------ -->
+
+        <div class="cabecalho-identidade">
+
+            <span class="cabecalho-pre-titulo">
+                ARQUIVO OFICIAL
+            </span>
+
+            <h1>
+                UNHOLY BLOOD
+            </h1>
+
+            <span class="cabecalho-subtitulo">
+                GUILD ARCHIVE
+            </span>
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             BOTÃO DO MENU
+        ------------------------------------------------------ -->
+
+        <button
+            class="botao-menu"
+            id="botao-menu"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+
+            <span class="botao-menu-linhas">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </span>
+
+            <span class="botao-menu-texto">
+                MENU
+            </span>
+
+        </button>
+
+    </header>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+    ========================================================== -->
+
+    <main id="inicio">
+
+
+        <!-- =====================================================
+             HERO
+             
+             Primeira parte visual do site.
+        ====================================================== -->
+
+        <section
+            class="hero"
+            aria-labelledby="titulo-hero"
+        >
+
+            <!-- Elementos decorativos -->
+
+            <div class="hero-brilho"></div>
+
+            <div class="hero-circulo hero-circulo-externo"></div>
+
+            <div class="hero-circulo hero-circulo-interno"></div>
+
+
+            <!-- -------------------------------------------------
+                 CONTEÚDO CENTRAL DO HERO
+            -------------------------------------------------- -->
+
+            <div class="hero-conteudo">
+
+
+                <!-- Logo principal -->
+
+                <div class="hero-logo-container">
+
+                    <div class="hero-logo-brilho"></div>
+
+                    <img
+                        src="../Imagens/logo/unholy-blood.png"
+                        alt="Símbolo da guilda Unholy Blood"
+                        class="hero-logo"
+                    >
+
+                </div>
+
+
+                <!-- Pequeno título -->
+
+                <span class="hero-pre-titulo">
+                    SOB O MESMO ESTANDARTE
+                </span>
+
+
+                <!-- Título principal -->
+
+                <h2
+                    class="hero-titulo"
+                    id="titulo-hero"
+                >
+
+                    BEM-VINDO À
+
+                    <span>
+                        UNHOLY BLOOD
+                    </span>
+
+                </h2>
+
+
+                <!-- Frase principal -->
+
+                <p class="hero-frase">
+
+                    Onde a Graça nos abandonou,
+
+                    <br>
+
+                    <strong>
+                        nosso sangue despertou.
+                    </strong>
+
+                </p>
+
+
+                <!-- Divisor -->
+
+                <div class="hero-separador">
+
+                    <span></span>
+
+                    <span class="hero-separador-simbolo">
+                        ◆
+                    </span>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- Pequena apresentação -->
+
+                <p class="hero-descricao">
+
+                    Um legado construído por aqueles que não
+                    receberam a bênção dos deuses — e decidiram
+                    criar seu próprio destino.
+
+                </p>
+
+
+                <!-- Botão para história -->
+
+                <a
+                    href="#lenda"
+                    class="hero-botao"
+                >
+
+                    <span>
+                        CONHECER NOSSA HISTÓRIA
+                    </span>
+
+                    <span class="hero-botao-seta">
+                        ↓
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- -------------------------------------------------
+                 INDICADOR DE ROLAGEM
+            -------------------------------------------------- -->
+
+            <div class="hero-scroll">
+
+                <span class="hero-scroll-text">
+                    DESÇA PARA CONTINUAR
+                </span>
+
+                <span class="hero-scroll-linha"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIVISOR DECORATIVO
+        ====================================================== -->
+
+        <div class="divisor-gotico">
+
+            <span class="divisor-linha"></span>
+
+            <span class="divisor-simbolo">
+                ◆
+            </span>
+
+            <span class="divisor-linha"></span>
+
+        </div>
+
+
+        <!-- =====================================================
+             A LENDA
+        ====================================================== -->
+
+        <section
+            class="secao-lenda"
+            id="lenda"
+            aria-labelledby="titulo-lenda"
+        >
+
+
+            <!-- -------------------------------------------------
+                 CABEÇALHO DA SEÇÃO
+            -------------------------------------------------- -->
+
+            <div class="secao-cabecalho">
+
+                <span class="secao-pre-titulo">
+                    O INÍCIO DE NOSSO LEGADO
+                </span>
+
+                <h2
+                    class="secao-titulo"
+                    id="titulo-lenda"
+                >
+
+                    A Lenda da
+
+                    <span>
+                        Unholy Blood
+                    </span>
+
+                </h2>
+
+                <p class="secao-introducao">
+
+                    Antes do sangue,
+                    existia a Graça.
+
+                </p>
+
+            </div>
+
+
+            <!-- -------------------------------------------------
+                 CONTAINER DA LENDA
+            -------------------------------------------------- -->
+
+            <div class="lenda-container">
+
+
+                <!-- IMAGEM -->
+
+                <div class="lenda-imagem-container">
+
+                    <div class="lenda-imagem-moldura">
+
+                        <span class="lenda-marca lenda-marca-superior">
+                            ✦
+                        </span>
+
+                        <img
+                            src="../Imagens/backgrounds/lenda-unholy-blood.png"
+                            alt="A Lenda da Unholy Blood"
+                            class="lenda-imagem"
+                        >
+
+                        <span class="lenda-marca lenda-marca-inferior">
+                            ✦
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- -------------------------------------------------
+                     TEXTO DA LENDA
+                -------------------------------------------------- -->
+
+                <article class="lenda-texto">
+
+
+                    <!-- Cabeçalho -->
+
+                    <div class="lenda-texto-cabecalho">
+
+                        <span class="lenda-numero">
+                            I
+                        </span>
+
+                        <div>
+
+                            <small>
+                                CRÔNICAS DA GUILDA
+                            </small>
+
+                            <h3>
+                                O Sangue Profano
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Conteúdo -->
+
+                    <div class="lenda-conteudo">
+
+
+                        <p class="lenda-paragrafo destaque">
+
+                            Dizem que, em tempos antigos, uma Graça
+                            guiava os escolhidos por um caminho dourado.
+                            Ela iluminava aqueles que eram dignos,
+                            concedendo-lhes propósito, força e um lugar
+                            entre os abençoados.
+
+                        </p>
+
+
+                        <p class="lenda-paragrafo">
+
+                            Mas alguns nasceram sem essa luz.
+
+                        </p>
+
+
+                        <p class="lenda-paragrafo destaque-menor">
+
+                            Sem destino.
+
+                            <br>
+
+                            Sem bênção.
+
+                            <br>
+
+                            Sem Graça.
+
+                        </p>
+
+
+                        <p class="lenda-paragrafo">
+
+                            Rejeitados pelo poder que guiava o mundo,
+                            esses guerreiros descobriram que havia outra
+                            força correndo em suas veias: um sangue antigo,
+                            proibido e poderoso.
+
+                            <br><br>
+
+                            Um sangue que não precisava de bênção
+                            para existir.
+
+                        </p>
+
+
+                        <p class="lenda-paragrafo">
+
+                            Eles passaram a ser conhecidos como
+
+                            <strong>
+                                Unholy Blood — o Sangue Profano.
+                            </strong>
+
+                        </p>
+
+
+                        <p class="lenda-paragrafo">
+
+                            Agora, reunidos sob um mesmo estandarte,
+                            eles não buscam a aprovação dos deuses.
+
+                            <br><br>
+
+                            Buscam criar seu próprio destino.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- -------------------------------------------------
+                         FRASE FINAL
+                    -------------------------------------------------- -->
+
+                    <div class="lenda-frase-final">
+
+                        <span class="lenda-frase-linha"></span>
+
+                        <p>
+
+                            Onde a Graça nos abandonou,
+
+                            <strong>
+                                nosso sangue despertou.
+                            </strong>
+
+                        </p>
+
+                        <span class="lenda-frase-linha"></span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIVISOR
+        ====================================================== -->
+
+        <div class="divisor-gotico divisor-gotico-menor">
+
+            <span class="divisor-linha"></span>
+
+            <span class="divisor-simbolo">
+                ✦
+            </span>
+
+            <span class="divisor-linha"></span>
+
+        </div>
+
+
+        <!-- =====================================================
+             REGRAS DA GUILDA
+        ====================================================== -->
+
+        <section
+            class="secao-regras"
+            id="regras"
+            aria-labelledby="titulo-regras"
+        >
+
+
+            <!-- -------------------------------------------------
+                 CABEÇALHO
+            -------------------------------------------------- -->
+
+            <div class="secao-cabecalho">
+
+                <span class="secao-pre-titulo">
+                    O CÓDIGO DO SANGUE
+                </span>
+
+                <h2
+                    class="secao-titulo"
+                    id="titulo-regras"
+                >
+
+                    Regras da
+
+                    <span>
+                        Unholy Blood
+                    </span>
+
+                </h2>
+
+                <p class="secao-introducao">
+
+                    Todo membro carrega o nome da guilda.
+                    Honre-o.
+
+                </p>
+
+            </div>
+
+
+            <!-- -------------------------------------------------
+                 PAINEL DAS REGRAS
+            -------------------------------------------------- -->
+
+            <div class="regras-container">
+
+
+                <!-- Símbolo decorativo -->
+
+                <div class="regras-simbolo">
+
+                    <div class="regras-simbolo-circulo">
+
+                        <span>
+                            UB
+                        </span>
+
+                    </div>
+
+                    <span class="regras-simbolo-texto">
+                        UNHOLY BLOOD
+                    </span>
+
+                </div>
+
+
+                <!-- Lista de regras -->
+
+                <div class="regras-lista">
+
+
+                    <!-- REGRA 01 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            01
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Respeito acima de tudo.
+                            </h3>
+
+                            <p>
+                                Sem ofensas, preconceito ou
+                                ataques pessoais.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 02 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            02
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Sem brigas desnecessárias.
+                            </h3>
+
+                            <p>
+                                Discussões acontecem, mas resolvam
+                                na conversa.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 03 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            03
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Sem spam ou flood.
+                            </h3>
+
+                            <p>
+                                Evite mensagens, marcações ou
+                                conteúdos repetitivos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 04 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            04
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Nada de conteúdo impróprio.
+                            </h3>
+
+                            <p>
+                                Mantenha o ambiente confortável
+                                para todos.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 05 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            05
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Sem divulgação.
+                            </h3>
+
+                            <p>
+                                Não divulgue outros servidores,
+                                links ou projetos sem autorização.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 06 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            06
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Respeite o jogo.
+                            </h3>
+
+                            <p>
+                                Sem trapaças, exploits ou qualquer
+                                coisa que prejudique a experiência
+                                dos outros.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 07 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            07
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                PvP é PvP.
+                            </h3>
+
+                            <p>
+                                Rivalidade dentro do jogo fica
+                                dentro do jogo. Sem levar para o pessoal.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 08 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            08
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Não estrague a experiência dos outros.
+                            </h3>
+
+                            <p>
+                                Evite spoilers, trollagem excessiva
+                                e atitudes de má-fé.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 09 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            09
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Bom senso sempre.
+                            </h3>
+
+                            <p>
+                                Nem tudo precisa estar escrito nas regras
+                                para sabermos quando algo é errado.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- REGRA 10 -->
+
+                    <article class="regra">
+
+                        <span class="regra-numero">
+                            10
+                        </span>
+
+                        <div class="regra-conteudo">
+
+                            <h3>
+                                Divirta-se.
+                            </h3>
+
+                            <p>
+                                A ideia é jogar junto, fazer amizade
+                                e criar boas histórias.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Frase final -->
+
+            <div class="regras-final">
+
+                <span></span>
+
+                <p>
+
+                    O sangue nos une.
+
+                    <strong>
+                        A guilda nos fortalece.
+                    </strong>
+
+                </p>
+
+                <span></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEÇÃO — ARQUIVO DA GUILDA
+             
+             Essa seção será a ligação visual entre a página
+             inicial e a coleção.
+        ====================================================== -->
+
+        <section
+            class="secao-arquivo"
+            id="colecao"
+            aria-labelledby="titulo-arquivo"
+        >
+
+            <div class="arquivo-overlay"></div>
+
+            <div class="arquivo-conteudo">
+
+
+                <!-- Identificação -->
+
+                <span class="secao-pre-titulo">
+                    O ARQUIVO DA GUILDA
+                </span>
+
+
+                <!-- Título -->
+
+                <h2
+                    id="titulo-arquivo"
+                >
+
+                    Nosso legado
+
+                    <span>
+                        catalogado.
+                    </span>
+
+                </h2>
+
+
+                <!-- Descrição -->
+
+                <p>
+
+                    Pokémon, armas, armaduras, relíquias e
+                    todos os tesouros pertencentes à Unholy Blood.
+
+                    <br><br>
+
+                    Tudo registrado.
+                    Tudo organizado.
+                    Nada esquecido.
+
+                </p>
+
+
+                <!-- Botão -->
+
+                <a
+                    href="pages/catalogo.html"
+                    class="arquivo-botao"
+                >
+
+                    <span>
+                        EXPLORAR COLEÇÃO
+                    </span>
+
+                    <span class="arquivo-botao-seta">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ÁREA DE CADASTRO
+             
+             Por enquanto será apenas uma âncora estrutural.
+             A funcionalidade real será criada posteriormente.
+        ====================================================== -->
+
+        <section
+            class="area-cadastro"
+            id="cadastro"
+            aria-hidden="true"
+        >
+
+            <!--
+
+                A área administrativa será desenvolvida
+                posteriormente.
+
+                Ela deverá permitir:
+
+                - Criar categorias
+                - Editar categorias
+                - Excluir categorias
+                - Adicionar itens
+                - Editar itens
+                - Remover itens
+                - Definir raridade
+                - Definir temporada
+                - Definir forma de obtenção
+                - Definir status
+                - Associar itens a jogadores
+                - Gerenciar o armazém
+                - Registrar histórico
+
+            -->
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         RODAPÉ
+    ========================================================== -->
+
+    <footer class="rodape">
+
+
+        <!-- -----------------------------------------------------
+             LOGO
+        ------------------------------------------------------ -->
+
+        <div class="rodape-logo">
+
+            <img
+                src="../Imagens/logo/unholy-blood.png"
+                alt="Símbolo da Unholy Blood"
+            >
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             IDENTIDADE
+        ------------------------------------------------------ -->
+
+        <div class="rodape-identidade">
+
+            <h2>
+                UNHOLY BLOOD
+            </h2>
+
+            <p>
+                GUILD ARCHIVE
+            </p>
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             FRASE
+        ------------------------------------------------------ -->
+
+        <div class="rodape-frase">
+
+            <p>
+
+                "Onde a Graça nos abandonou,
+                nosso sangue despertou."
+
+            </p>
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             DIVISOR
+        ------------------------------------------------------ -->
+
+        <div class="rodape-divisor">
+
+            <span></span>
+
+            <span>
+                ◆
+            </span>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- -----------------------------------------------------
+             INFORMAÇÕES FINAIS
+        ------------------------------------------------------ -->
+
+        <div class="rodape-final">
+
+            <span>
+                UNHOLY BLOOD
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                ARQUIVO DA GUILDA
+            </span>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT PRINCIPAL
+    ========================================================== -->
+
+    <script
+        src="script.js"
+    ></script>
+
+
+</body>
+
+</html>

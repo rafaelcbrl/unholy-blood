@@ -1,0 +1,3288 @@
+/* ============================================================
+   UNHOLY BLOOD — ARQUIVO DA GUILDA
+   STYLE.CSS
+   ============================================================ */
+
+
+/* ============================================================
+   01. VARIÁVEIS GLOBAIS
+   ============================================================ */
+
+:root {
+
+    /* --------------------------------------------------------
+       CORES PRINCIPAIS
+    -------------------------------------------------------- */
+
+    --preto-absoluto: #030303;
+
+    --preto-profundo: #070707;
+
+    --preto-principal: #0a0a0a;
+
+    --preto-secundario: #101010;
+
+    --cinza-escuro: #171717;
+
+    --cinza-medio: #242424;
+
+    --cinza-claro: #777777;
+
+    --branco: #f1eee8;
+
+    --branco-suave: #d7d3ca;
+
+
+    /* --------------------------------------------------------
+       VERMELHOS
+    -------------------------------------------------------- */
+
+    --vermelho-profundo: #32070a;
+
+    --vermelho-escuro: #560b10;
+
+    --vermelho-sangue: #8f1018;
+
+    --vermelho-intenso: #b91b26;
+
+    --vermelho-brilho: #e52a36;
+
+
+    /* --------------------------------------------------------
+       DOURADOS
+    -------------------------------------------------------- */
+
+    --dourado-escuro: #59451f;
+
+    --dourado-antigo: #8f7134;
+
+    --dourado: #b99a55;
+
+    --dourado-claro: #d8bd7a;
+
+    --dourado-brilho: #f0d99b;
+
+
+    /* --------------------------------------------------------
+       EFEITOS
+    -------------------------------------------------------- */
+
+    --sombra-profunda:
+        0 20px 60px rgba(0, 0, 0, 0.75);
+
+    --sombra-vermelha:
+        0 0 35px rgba(143, 16, 24, 0.22);
+
+    --brilho-vermelho:
+        0 0 20px rgba(185, 27, 38, 0.35);
+
+    --brilho-dourado:
+        0 0 20px rgba(185, 154, 85, 0.25);
+
+
+    /* --------------------------------------------------------
+       BORDAS
+    -------------------------------------------------------- */
+
+    --borda-escura:
+        rgba(255, 255, 255, 0.06);
+
+    --borda-vermelha:
+        rgba(143, 16, 24, 0.45);
+
+    --borda-dourada:
+        rgba(185, 154, 85, 0.4);
+
+
+    /* --------------------------------------------------------
+       DIMENSÕES
+    -------------------------------------------------------- */
+
+    --largura-maxima: 1400px;
+
+    --altura-cabecalho: 92px;
+
+    --raio-pequeno: 4px;
+
+    --raio-medio: 8px;
+
+    --raio-grande: 14px;
+
+
+    /* --------------------------------------------------------
+       TRANSIÇÕES
+    -------------------------------------------------------- */
+
+    --transicao-rapida:
+        0.2s ease;
+
+    --transicao-padrao:
+        0.35s ease;
+
+    --transicao-lenta:
+        0.6s ease;
+
+}
+
+
+/* ============================================================
+   02. RESET
+   ============================================================ */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        var(--preto-principal);
+
+    color:
+        var(--branco);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+::selection {
+
+    background:
+        var(--vermelho-sangue);
+
+    color:
+        var(--branco);
+
+}
+
+
+/* ============================================================
+   03. BARRA DE ROLAGEM
+   ============================================================ */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--preto-absoluto);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--vermelho-escuro),
+            var(--dourado-escuro)
+        );
+
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--vermelho-sangue);
+
+}
+
+
+/* ============================================================
+   04. FUNDO GERAL
+   ============================================================ */
+
+.fundo-site {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(86, 11, 16, 0.16),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(89, 69, 31, 0.06),
+            transparent 25%
+        ),
+
+        var(--preto-principal);
+
+}
+
+
+.textura-fundo {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px;
+
+}
+
+
+.fundo-brilho {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.2;
+
+}
+
+
+.fundo-brilho-1 {
+
+    width: 500px;
+
+    height: 500px;
+
+    background:
+        var(--vermelho-profundo);
+
+    top: -250px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+.fundo-brilho-2 {
+
+    width: 350px;
+
+    height: 350px;
+
+    background:
+        var(--vermelho-escuro);
+
+    left: -200px;
+
+    top: 40%;
+
+}
+
+
+.fundo-brilho-3 {
+
+    width: 300px;
+
+    height: 300px;
+
+    background:
+        var(--dourado-escuro);
+
+    right: -180px;
+
+    top: 65%;
+
+}
+
+
+/* ============================================================
+   05. CABEÇALHO
+   ============================================================ */
+
+.cabecalho {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height:
+        var(--altura-cabecalho);
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 42px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(3, 3, 3, 0.96),
+            rgba(3, 3, 3, 0.78)
+        );
+
+    border-bottom:
+        1px solid var(--borda-escura);
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+.cabecalho::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -1px;
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(143, 16, 24, 0.55),
+            rgba(185, 154, 85, 0.35),
+            transparent
+        );
+
+}
+
+
+/* ------------------------------------------------------------
+   LOGO DO CABEÇALHO
+------------------------------------------------------------ */
+
+.cabecalho-logo {
+
+    width: 62px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform var(--transicao-padrao);
+
+}
+
+
+.cabecalho-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(143, 16, 24, 0.35)
+        );
+
+}
+
+
+.cabecalho-logo:hover {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+/* ------------------------------------------------------------
+   IDENTIDADE CENTRAL
+------------------------------------------------------------ */
+
+.cabecalho-identidade {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    text-align: center;
+
+    line-height: 1;
+
+}
+
+
+.cabecalho-pre-titulo {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+.cabecalho-identidade h1 {
+
+    color:
+        var(--branco);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing: 8px;
+
+}
+
+
+.cabecalho-subtitulo {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* ============================================================
+   06. BOTÃO DO MENU
+   ============================================================ */
+
+.botao-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px 0 12px 16px;
+
+    background:
+        transparent;
+
+    color:
+        var(--branco);
+
+}
+
+
+.botao-menu-linhas {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.botao-menu-linhas span {
+
+    width: 27px;
+
+    height: 1px;
+
+    display: block;
+
+    background:
+        var(--dourado);
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.botao-menu-linhas span:nth-child(2) {
+
+    width: 19px;
+
+    margin-left: auto;
+
+}
+
+
+.botao-menu-texto {
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.botao-menu:hover
+.botao-menu-linhas span {
+
+    background:
+        var(--vermelho-brilho);
+
+}
+
+
+.botao-menu:hover
+.botao-menu-linhas span:nth-child(2) {
+
+    width: 27px;
+
+}
+
+
+/* ============================================================
+   07. MENU LATERAL
+   ============================================================ */
+
+.menu-lateral {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: min(420px, 90vw);
+
+    height: 100vh;
+
+    z-index: 2000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        50px 42px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d0d0d,
+            #050505
+        );
+
+    border-left:
+        1px solid var(--borda-dourada);
+
+    box-shadow:
+        -30px 0 80px rgba(0,0,0,0.75);
+
+    transform:
+        translateX(100%);
+
+    transition:
+        transform 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+
+}
+
+
+.menu-lateral.aberto {
+
+    transform:
+        translateX(0);
+
+}
+
+
+/* ------------------------------------------------------------
+   BOTÃO FECHAR
+------------------------------------------------------------ */
+
+.botao-fechar-menu {
+
+    position: absolute;
+
+    top: 27px;
+
+    right: 30px;
+
+    width: 40px;
+
+    height: 40px;
+
+    background:
+        transparent;
+
+}
+
+
+.botao-fechar-menu span {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 24px;
+
+    height: 1px;
+
+    background:
+        var(--dourado);
+
+}
+
+
+.botao-fechar-menu span:first-child {
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+}
+
+
+.botao-fechar-menu span:last-child {
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+}
+
+
+.botao-fechar-menu:hover span {
+
+    background:
+        var(--vermelho-brilho);
+
+}
+
+
+/* ------------------------------------------------------------
+   IDENTIDADE DO MENU
+------------------------------------------------------------ */
+
+.menu-identidade {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+}
+
+
+.menu-logo-container {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.menu-logo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(143, 16, 24, 0.4)
+        );
+
+}
+
+
+.menu-subtitulo {
+
+    display: block;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+.menu-titulo h2 {
+
+    margin-top: 7px;
+
+    color:
+        var(--branco);
+
+    font-size: 24px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.menu-linha-decorativa {
+
+    display: block;
+
+    width: 100px;
+
+    height: 1px;
+
+    margin:
+        15px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado),
+            transparent
+        );
+
+}
+
+
+/* ------------------------------------------------------------
+   NAVEGAÇÃO
+------------------------------------------------------------ */
+
+.menu-navegacao {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 55px;
+
+}
+
+
+.menu-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding:
+        17px 18px;
+
+    border:
+        1px solid transparent;
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.menu-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 2px;
+
+    height: 0;
+
+    background:
+        var(--vermelho-brilho);
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        height var(--transicao-padrao);
+
+}
+
+
+.menu-item:hover,
+.menu-item-ativo {
+
+    background:
+        rgba(143, 16, 24, 0.08);
+
+    border-color:
+        rgba(143, 16, 24, 0.2);
+
+    color:
+        var(--branco);
+
+}
+
+
+.menu-item:hover::before,
+.menu-item-ativo::before {
+
+    height: 65%;
+
+}
+
+
+.menu-item-icone {
+
+    width: 25px;
+
+    color:
+        var(--dourado);
+
+    font-size: 17px;
+
+    text-align: center;
+
+}
+
+
+.menu-item-texto {
+
+    font-weight: 600;
+
+}
+
+
+/* ------------------------------------------------------------
+   RODAPÉ DO MENU
+------------------------------------------------------------ */
+
+.menu-rodape {
+
+    margin-top: auto;
+
+    text-align: center;
+
+}
+
+
+.menu-rodape-linha {
+
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--borda-dourada),
+            transparent
+        );
+
+}
+
+
+.menu-rodape p {
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+
+}
+
+
+.menu-versao {
+
+    display: block;
+
+    margin-top: 16px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* ------------------------------------------------------------
+   OVERLAY
+------------------------------------------------------------ */
+
+.menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1500;
+
+    background:
+        rgba(0, 0, 0, 0.72);
+
+    backdrop-filter:
+        blur(5px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.menu-overlay.aberto {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* ============================================================
+   08. HERO
+   ============================================================ */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        calc(var(--altura-cabecalho) + 80px)
+        30px
+        100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+.hero-brilho {
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    top: 40%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(143, 16, 24, 0.2),
+            transparent 65%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events: none;
+
+}
+
+
+.hero-circulo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid rgba(185, 154, 85, 0.08);
+
+    pointer-events: none;
+
+}
+
+
+.hero-circulo-externo {
+
+    width: 780px;
+
+    height: 780px;
+
+}
+
+
+.hero-circulo-interno {
+
+    width: 550px;
+
+    height: 550px;
+
+    border-color:
+        rgba(143, 16, 24, 0.1);
+
+}
+
+
+/* ------------------------------------------------------------
+   CONTEÚDO HERO
+------------------------------------------------------------ */
+
+.hero-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 100%);
+
+}
+
+
+.hero-logo-container {
+
+    position: relative;
+
+    width: 270px;
+
+    height: 270px;
+
+    margin:
+        0 auto 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.hero-logo-brilho {
+
+    position: absolute;
+
+    inset: 20px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(143, 16, 24, 0.4),
+            transparent 70%
+        );
+
+    filter:
+        blur(25px);
+
+    animation:
+        pulsar-brilho 4s ease-in-out infinite;
+
+}
+
+
+.hero-logo {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(143, 16, 24, 0.4)
+        )
+
+        drop-shadow(
+            0 0 40px rgba(0, 0, 0, 0.9)
+        );
+
+    animation:
+        flutuar-logo 6s ease-in-out infinite;
+
+}
+
+
+.hero-pre-titulo {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 6px;
+
+}
+
+
+.hero-titulo {
+
+    color:
+        var(--branco);
+
+    font-size:
+        clamp(36px, 6vw, 72px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    letter-spacing: 5px;
+
+}
+
+
+.hero-titulo span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--vermelho-brilho);
+
+    font-weight: 600;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+        0 0 25px rgba(185, 27, 38, 0.3);
+
+}
+
+
+.hero-frase {
+
+    margin-top: 28px;
+
+    color:
+        var(--branco-suave);
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+}
+
+
+.hero-frase strong {
+
+    color:
+        var(--dourado-claro);
+
+    font-weight: 500;
+
+}
+
+
+.hero-separador {
+
+    width: min(500px, 80%);
+
+    margin:
+        30px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.hero-separador span:not(.hero-separador-simbolo) {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--borda-dourada)
+        );
+
+}
+
+
+.hero-separador span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--borda-dourada),
+            transparent
+        );
+
+}
+
+
+.hero-separador-simbolo {
+
+    color:
+        var(--dourado);
+
+    font-size: 10px;
+
+}
+
+
+.hero-descricao {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.hero-botao {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+    padding:
+        14px 22px;
+
+    border:
+        1px solid var(--borda-dourada);
+
+    color:
+        var(--branco-suave);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    background:
+        rgba(10, 10, 10, 0.6);
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.hero-botao:hover {
+
+    border-color:
+        var(--vermelho-sangue);
+
+    background:
+        rgba(143, 16, 24, 0.1);
+
+    color:
+        var(--branco);
+
+    box-shadow:
+        var(--brilho-vermelho);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.hero-botao-seta {
+
+    color:
+        var(--dourado);
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.hero-botao:hover
+.hero-botao-seta {
+
+    transform:
+        translateY(4px);
+
+}
+
+
+/* ------------------------------------------------------------
+   SCROLL INDICATOR
+------------------------------------------------------------ */
+
+.hero-scroll {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.hero-scroll-text {
+
+    color:
+        rgba(215, 211, 202, 0.45);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.hero-scroll-linha {
+
+    width: 1px;
+
+    height: 45px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--dourado),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   09. DIVISORES
+   ============================================================ */
+
+.divisor-gotico {
+
+    width: min(1000px, 80%);
+
+    margin:
+        20px auto 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.divisor-gotico-menor {
+
+    margin-top: 0;
+
+}
+
+
+.divisor-linha {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--borda-dourada)
+        );
+
+}
+
+
+.divisor-linha:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--borda-dourada),
+            transparent
+        );
+
+}
+
+
+.divisor-simbolo {
+
+    color:
+        var(--dourado);
+
+    font-size: 10px;
+
+}
+
+
+/* ============================================================
+   10. CABEÇALHOS DAS SEÇÕES
+   ============================================================ */
+
+.secao-cabecalho {
+
+    width: min(900px, 90%);
+
+    margin:
+        0 auto 70px;
+
+    text-align: center;
+
+}
+
+
+.secao-pre-titulo {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+.secao-titulo {
+
+    color:
+        var(--branco);
+
+    font-size:
+        clamp(32px, 5vw, 55px);
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+}
+
+
+.secao-titulo span {
+
+    color:
+        var(--vermelho-brilho);
+
+}
+
+
+.secao-introducao {
+
+    margin-top: 18px;
+
+    color:
+        var(--cinza-claro);
+
+    font-size: 16px;
+
+    font-style: italic;
+
+}
+
+
+/* ============================================================
+   11. LENDA
+   ============================================================ */
+
+.secao-lenda {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width:
+        var(--largura-maxima);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 45px 130px;
+
+}
+
+
+.lenda-container {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    gap: 75px;
+
+    align-items: center;
+
+}
+
+
+/* ------------------------------------------------------------
+   IMAGEM DA LENDA
+------------------------------------------------------------ */
+
+.lenda-imagem-container {
+
+    width: 100%;
+
+}
+
+
+.lenda-imagem-moldura {
+
+    position: relative;
+
+    padding: 12px;
+
+    border:
+        1px solid var(--borda-dourada);
+
+    background:
+        rgba(10, 10, 10, 0.7);
+
+    box-shadow:
+        var(--sombra-profunda);
+
+}
+
+
+.lenda-imagem-moldura::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border:
+        1px solid rgba(143, 16, 24, 0.25);
+
+    pointer-events: none;
+
+}
+
+
+.lenda-imagem {
+
+    width: 100%;
+
+    min-height: 580px;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.lenda-marca {
+
+    position: absolute;
+
+    z-index: 3;
+
+    color:
+        var(--dourado);
+
+    font-size: 15px;
+
+}
+
+
+.lenda-marca-superior {
+
+    top: -9px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--preto-principal);
+
+    padding:
+        0 10px;
+
+}
+
+
+.lenda-marca-inferior {
+
+    bottom: -9px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--preto-principal);
+
+    padding:
+        0 10px;
+
+}
+
+
+/* ------------------------------------------------------------
+   TEXTO DA LENDA
+------------------------------------------------------------ */
+
+.lenda-texto {
+
+    padding:
+        15px 0;
+
+}
+
+
+.lenda-texto-cabecalho {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.lenda-numero {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    border:
+        1px solid var(--borda-dourada);
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+}
+
+
+.lenda-texto-cabecalho small {
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+.lenda-texto-cabecalho h3 {
+
+    margin-top: 5px;
+
+    color:
+        var(--branco);
+
+    font-size: 26px;
+
+    font-weight: 500;
+
+}
+
+
+.lenda-conteudo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 23px;
+
+}
+
+
+.lenda-paragrafo {
+
+    color:
+        var(--branco-suave);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+
+.lenda-paragrafo.destaque {
+
+    color:
+        #c9c5bc;
+
+    font-size: 17px;
+
+}
+
+
+.lenda-paragrafo.destaque-menor {
+
+    padding-left: 22px;
+
+    border-left:
+        2px solid var(--vermelho-sangue);
+
+    color:
+        var(--dourado-claro);
+
+    font-size: 17px;
+
+    line-height: 2;
+
+}
+
+
+.lenda-paragrafo strong {
+
+    color:
+        var(--vermelho-brilho);
+
+    font-weight: 600;
+
+}
+
+
+.lenda-frase-final {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+}
+
+
+.lenda-frase-linha {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        var(--borda-dourada);
+
+}
+
+
+.lenda-frase-final p {
+
+    max-width: 280px;
+
+    color:
+        var(--dourado);
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    text-align: center;
+
+}
+
+
+.lenda-frase-final strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--vermelho-brilho);
+
+    font-style: normal;
+
+}
+
+
+/* ============================================================
+   12. REGRAS
+   ============================================================ */
+
+.secao-regras {
+
+    width: 100%;
+
+    max-width:
+        var(--largura-maxima);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 45px 130px;
+
+}
+
+
+.regras-container {
+
+    display: grid;
+
+    grid-template-columns:
+        280px
+        minmax(0, 1fr);
+
+    gap: 65px;
+
+    padding:
+        55px;
+
+    border:
+        1px solid var(--borda-escura);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0.005)
+        );
+
+    box-shadow:
+        var(--sombra-profunda);
+
+}
+
+
+/* ------------------------------------------------------------
+   SÍMBOLO
+------------------------------------------------------------ */
+
+.regras-simbolo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.regras-simbolo-circulo {
+
+    position: relative;
+
+    width: 190px;
+
+    height: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--borda-dourada);
+
+    border-radius: 50%;
+
+}
+
+
+.regras-simbolo-circulo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid var(--borda-vermelha);
+
+    border-radius: 50%;
+
+}
+
+
+.regras-simbolo-circulo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 25px;
+
+    border:
+        1px solid rgba(185,154,85,0.15);
+
+    border-radius: 50%;
+
+}
+
+
+.regras-simbolo-circulo span {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        var(--vermelho-brilho);
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 20px rgba(185,27,38,0.35);
+
+}
+
+
+.regras-simbolo-texto {
+
+    margin-top: 25px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* ------------------------------------------------------------
+   LISTA
+------------------------------------------------------------ */
+
+.regras-lista {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0 45px;
+
+}
+
+
+.regra {
+
+    display: grid;
+
+    grid-template-columns:
+        42px
+        minmax(0, 1fr);
+
+    gap: 16px;
+
+    padding:
+        23px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+}
+
+
+.regra-numero {
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.regra-conteudo h3 {
+
+    color:
+        var(--branco);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.regra-conteudo p {
+
+    margin-top: 5px;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+.regras-final {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 70%;
+
+    margin:
+        55px auto 0;
+
+}
+
+
+.regras-final span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        var(--borda-dourada);
+
+}
+
+
+.regras-final p {
+
+    color:
+        var(--cinza-claro);
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    text-align: center;
+
+}
+
+
+.regras-final strong {
+
+    color:
+        var(--dourado);
+
+}
+
+
+/* ============================================================
+   13. ÁREA DO ARQUIVO / COLEÇÃO
+   ============================================================ */
+
+.secao-arquivo {
+
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(3,3,3,0.82),
+            rgba(3,3,3,0.94)
+        ),
+
+        radial-gradient(
+            circle at center,
+            rgba(143,16,24,0.25),
+            transparent 65%
+        );
+
+    border-top:
+        1px solid var(--borda-escura);
+
+    border-bottom:
+        1px solid var(--borda-escura);
+
+}
+
+
+.arquivo-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(143,16,24,0.05),
+            transparent
+        );
+
+}
+
+
+.arquivo-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    text-align: center;
+
+}
+
+
+.arquivo-conteudo h2 {
+
+    margin-top: 10px;
+
+    color:
+        var(--branco);
+
+    font-size:
+        clamp(35px, 5vw, 58px);
+
+    font-weight: 500;
+
+}
+
+
+.arquivo-conteudo h2 span {
+
+    display: block;
+
+    color:
+        var(--vermelho-brilho);
+
+}
+
+
+.arquivo-conteudo p {
+
+    max-width: 650px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        var(--cinza-claro);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+.arquivo-botao {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+    padding:
+        16px 26px;
+
+    border:
+        1px solid var(--borda-dourada);
+
+    color:
+        var(--branco);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.arquivo-botao:hover {
+
+    border-color:
+        var(--vermelho-brilho);
+
+    background:
+        rgba(143,16,24,0.1);
+
+    box-shadow:
+        var(--brilho-vermelho);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+.arquivo-botao-seta {
+
+    color:
+        var(--dourado);
+
+    transition:
+        var(--transicao-padrao);
+
+}
+
+
+.arquivo-botao:hover
+.arquivo-botao-seta {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* ============================================================
+   14. ÁREA DE CADASTRO
+   ============================================================ */
+
+.area-cadastro {
+
+    display: none;
+
+}
+
+
+/* ============================================================
+   15. RODAPÉ
+   ============================================================ */
+
+.rodape {
+
+    padding:
+        75px 30px 35px;
+
+    text-align: center;
+
+    background:
+        #040404;
+
+    border-top:
+        1px solid var(--borda-escura);
+
+}
+
+
+.rodape-logo {
+
+    width: 110px;
+
+    height: 110px;
+
+    margin:
+        0 auto 20px;
+
+}
+
+
+.rodape-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    opacity: 0.85;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(143,16,24,0.3)
+        );
+
+}
+
+
+.rodape-identidade h2 {
+
+    color:
+        var(--branco);
+
+    font-size: 22px;
+
+    letter-spacing: 6px;
+
+}
+
+
+.rodape-identidade p {
+
+    margin-top: 7px;
+
+    color:
+        var(--dourado);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.rodape-frase {
+
+    max-width: 500px;
+
+    margin:
+        30px auto;
+
+}
+
+
+.rodape-frase p {
+
+    color:
+        var(--cinza-claro);
+
+    font-size: 13px;
+
+    font-style: italic;
+
+}
+
+
+.rodape-divisor {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    max-width: 500px;
+
+    margin:
+        30px auto;
+
+}
+
+
+.rodape-divisor span:not(:nth-child(2)) {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        var(--borda-escura);
+
+}
+
+
+.rodape-divisor span:nth-child(2) {
+
+    color:
+        var(--dourado);
+
+    font-size: 9px;
+
+}
+
+
+.rodape-final {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+        #4c4c4c;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ============================================================
+   16. ANIMAÇÕES
+   ============================================================ */
+
+@keyframes pulsar-brilho {
+
+    0%,
+    100% {
+
+        opacity: 0.45;
+
+        transform:
+            scale(0.95);
+
+    }
+
+    50% {
+
+        opacity: 0.75;
+
+        transform:
+            scale(1.05);
+
+    }
+
+}
+
+
+@keyframes flutuar-logo {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* ============================================================
+   17. RESPONSIVIDADE — TABLETS
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+
+    .lenda-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 55px;
+
+    }
+
+
+    .lenda-imagem {
+
+        min-height: 500px;
+
+    }
+
+
+    .lenda-imagem-container {
+
+        max-width: 700px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .regras-container {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .regras-simbolo {
+
+        padding-bottom: 20px;
+
+    }
+
+
+}
+
+
+/* ============================================================
+   18. RESPONSIVIDADE — TABLETS PEQUENOS
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+
+    :root {
+
+        --altura-cabecalho: 78px;
+
+    }
+
+
+    .cabecalho {
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .cabecalho-logo {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+
+    .cabecalho-identidade h1 {
+
+        font-size: 18px;
+
+        letter-spacing: 5px;
+
+    }
+
+
+    .cabecalho-pre-titulo,
+    .cabecalho-subtitulo {
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .botao-menu-texto {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding-top:
+            calc(var(--altura-cabecalho) + 60px);
+
+    }
+
+
+    .hero-logo-container {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
+
+
+    .hero-circulo-externo {
+
+        width: 600px;
+
+        height: 600px;
+
+    }
+
+
+    .hero-circulo-interno {
+
+        width: 430px;
+
+        height: 430px;
+
+    }
+
+
+    .secao-lenda,
+    .secao-regras {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .regras-container {
+
+        padding:
+            35px 25px;
+
+    }
+
+
+    .regras-lista {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .regras-final {
+
+        width: 90%;
+
+    }
+
+
+}
+
+
+/* ============================================================
+   19. RESPONSIVIDADE — CELULARES
+   ============================================================ */
+
+@media (max-width: 560px) {
+
+
+    .cabecalho-identidade {
+
+        left: 48%;
+
+    }
+
+
+    .cabecalho-identidade h1 {
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .cabecalho-pre-titulo,
+    .cabecalho-subtitulo {
+
+        display: none;
+
+    }
+
+
+    .cabecalho-logo {
+
+        width: 43px;
+
+        height: 43px;
+
+    }
+
+
+    .hero {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    .hero-logo-container {
+
+        width: 175px;
+
+        height: 175px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .hero-pre-titulo {
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .hero-titulo {
+
+        font-size: 31px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .hero-titulo span {
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .hero-frase {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-descricao {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero-circulo-externo {
+
+        width: 420px;
+
+        height: 420px;
+
+    }
+
+
+    .hero-circulo-interno {
+
+        width: 300px;
+
+        height: 300px;
+
+    }
+
+
+    .secao-cabecalho {
+
+        width: 95%;
+
+    }
+
+
+    .secao-titulo {
+
+        font-size: 30px;
+
+    }
+
+
+    .lenda-imagem {
+
+        min-height: 400px;
+
+    }
+
+
+    .lenda-paragrafo {
+
+        font-size: 14px;
+
+    }
+
+
+    .lenda-frase-final {
+
+        gap: 8px;
+
+    }
+
+
+    .lenda-frase-final p {
+
+        font-size: 11px;
+
+    }
+
+
+    .regras-container {
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .regras-simbolo-circulo {
+
+        width: 150px;
+
+        height: 150px;
+
+    }
+
+
+    .regras-simbolo-circulo span {
+
+        font-size: 32px;
+
+    }
+
+
+    .regra {
+
+        grid-template-columns:
+            32px
+            minmax(0, 1fr);
+
+        gap: 10px;
+
+    }
+
+
+    .regra-conteudo h3 {
+
+        font-size: 13px;
+
+    }
+
+
+    .regra-conteudo p {
+
+        font-size: 11px;
+
+    }
+
+
+    .regras-final {
+
+        width: 100%;
+
+    }
+
+
+    .regras-final span {
+
+        display: none;
+
+    }
+
+
+    .arquivo-conteudo h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .arquivo-conteudo p {
+
+        font-size: 12px;
+
+    }
+
+
+    .menu-lateral {
+
+        padding:
+            45px 25px 30px;
+
+    }
+
+
+    .menu-logo-container {
+
+        width: 95px;
+
+        height: 95px;
+
+    }
+
+
+    .menu-navegacao {
+
+        margin-top: 40px;
+
+    }
+
+
+    .rodape-identidade h2 {
+
+        font-size: 17px;
+
+        letter-spacing: 4px;
+
+    }
+
+
+    .rodape-final {
+
+        flex-direction: column;
+
+        gap: 6px;
+
+    }
+
+
+}
+
+
+/* ============================================================
+   20. REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}

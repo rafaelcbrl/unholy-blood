@@ -1,0 +1,2198 @@
+/* ============================================================
+   UNHOLY BLOOD — ARQUIVO DA GUILDA
+   CATEGORIA.CSS
+   ============================================================ */
+
+
+/* ============================================================
+   01. VARIÁVEIS
+   ============================================================ */
+
+:root {
+
+    --preto-absoluto: #030303;
+    --preto: #070707;
+    --preto-medio: #0d0d0d;
+    --preto-claro: #131313;
+
+    --vermelho-profano: #7d1018;
+    --vermelho-sangue: #a71924;
+    --vermelho-claro: #c52a35;
+    --vermelho-brilho: #e0444e;
+
+    --dourado: #b9954b;
+    --dourado-claro: #d5b76c;
+    --dourado-escuro: #6f5424;
+
+    --branco: #f1eee7;
+    --branco-suave: #d5d0c6;
+    --cinza: #99938a;
+    --cinza-escuro: #57524b;
+
+    --borda: rgba(185, 149, 75, 0.22);
+    --borda-vermelha: rgba(167, 25, 36, 0.32);
+
+    --sombra:
+        0 25px 70px rgba(0, 0, 0, 0.75);
+
+    --transicao:
+        0.3s ease;
+
+}
+
+
+/* ============================================================
+   02. RESET
+   ============================================================ */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(125, 16, 24, 0.12),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #080808 50%,
+            #030303 100%
+        );
+
+    color: var(--branco);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+
+}
+
+
+button,
+input,
+select {
+
+    font: inherit;
+
+}
+
+
+button,
+a,
+select {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/* ============================================================
+   03. BARRA DE ROLAGEM
+   ============================================================ */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #030303;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--vermelho-profano),
+            var(--dourado-escuro)
+        );
+
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--vermelho-claro),
+            var(--dourado)
+        );
+
+}
+
+
+/* ============================================================
+   04. FUNDO
+   ============================================================ */
+
+.fundo-categoria {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+
+.fundo-brilho {
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    top: -420px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(125, 16, 24, 0.22),
+            rgba(125, 16, 24, 0.05) 42%,
+            transparent 72%
+        );
+
+    filter: blur(10px);
+
+}
+
+
+.fundo-textura {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.035;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 255, 255, 0.12) 4px
+        );
+
+}
+
+
+.fundo-vinheta {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0, 0, 0, 0.4) 75%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+
+}
+
+
+/* ============================================================
+   05. CABEÇALHO
+   ============================================================ */
+
+.cabecalho-categoria {
+
+    position: relative;
+
+    width: min(1500px, 92%);
+
+    margin: 0 auto;
+
+    min-height: 135px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    border-bottom:
+        1px solid
+        rgba(185, 149, 75, 0.16);
+
+}
+
+
+/* ============================================================
+   06. BOTÃO VOLTAR
+   ============================================================ */
+
+.botao-voltar {
+
+    justify-self: start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 18px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.22);
+
+    background:
+        rgba(8, 8, 8, 0.75);
+
+    color: var(--cinza);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        transform var(--transicao),
+        color var(--transicao),
+        border-color var(--transicao),
+        background var(--transicao);
+
+}
+
+
+.botao-voltar:hover {
+
+    transform: translateX(-4px);
+
+    color: var(--branco);
+
+    border-color:
+        rgba(185, 149, 75, 0.55);
+
+    background:
+        rgba(125, 16, 24, 0.12);
+
+}
+
+
+.botao-voltar-icone {
+
+    color: var(--dourado);
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+/* ============================================================
+   07. IDENTIDADE
+   ============================================================ */
+
+.identidade-categoria {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 5px;
+
+}
+
+
+.identidade-linha {
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+}
+
+
+.identidade-nome {
+
+    color: var(--branco);
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+.identidade-subtitulo {
+
+    color: var(--cinza-escuro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ============================================================
+   08. LOGO
+   ============================================================ */
+
+.logo-categoria {
+
+    justify-self: end;
+
+    width: 72px;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.25);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(125, 16, 24, 0.14),
+            rgba(5, 5, 5, 0.9)
+        );
+
+    box-shadow:
+        0 0 30px rgba(125, 16, 24, 0.1);
+
+}
+
+
+.logo-categoria img {
+
+    width: 57px;
+
+    height: 57px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(167, 25, 36, 0.35)
+        );
+
+}
+
+
+/* ============================================================
+   09. CONTEÚDO
+   ============================================================ */
+
+.conteudo-categoria {
+
+    width: min(1380px, 90%);
+
+    margin:
+        0 auto;
+
+    padding:
+        80px 0 100px;
+
+}
+
+
+/* ============================================================
+   10. APRESENTAÇÃO
+   ============================================================ */
+
+.apresentacao-categoria {
+
+    max-width: 900px;
+
+    margin:
+        0 auto 65px;
+
+    text-align: center;
+
+}
+
+
+/* ============================================================
+   11. MARCAÇÃO SUPERIOR
+   ============================================================ */
+
+.marcacao-categoria {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.marcacao-linha {
+
+    width: 65px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado-escuro)
+        );
+
+}
+
+
+.marcacao-linha:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--dourado-escuro),
+            transparent
+        );
+
+}
+
+
+.marcacao-texto {
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* ============================================================
+   12. TÍTULO
+   ============================================================ */
+
+#titulo-categoria {
+
+    position: relative;
+
+    color: var(--branco);
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            82px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 35px
+        rgba(167, 25, 36, 0.15);
+
+}
+
+
+#titulo-categoria::first-letter {
+
+    color: var(--vermelho-claro);
+
+}
+
+
+/* ============================================================
+   13. DESCRIÇÃO
+   ============================================================ */
+
+.descricao-categoria {
+
+    max-width: 700px;
+
+    margin:
+        28px auto 0;
+
+    color: var(--cinza);
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+
+/* ============================================================
+   14. DIVISOR
+   ============================================================ */
+
+.divisor-categoria {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    max-width: 420px;
+
+    margin:
+        38px auto 0;
+
+}
+
+
+.divisor-categoria span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--borda)
+        );
+
+}
+
+
+.divisor-categoria span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--borda),
+            transparent
+        );
+
+}
+
+
+.divisor-categoria strong {
+
+    color: var(--dourado);
+
+    font-size: 13px;
+
+}
+
+
+/* ============================================================
+   15. PAINEL DE CONTROLE
+   ============================================================ */
+
+.painel-controle-categoria {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 1.8fr)
+        repeat(3, minmax(150px, 1fr));
+
+    gap: 14px;
+
+    padding: 25px;
+
+    margin-bottom: 55px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18, 18, 18, 0.96),
+            rgba(7, 7, 7, 0.96)
+        );
+
+    box-shadow:
+        var(--sombra);
+
+}
+
+
+.campo-pesquisa-categoria,
+.filtro-categoria {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.campo-pesquisa-categoria label,
+.filtro-categoria label {
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ============================================================
+   16. CAMPO DE PESQUISA
+   ============================================================ */
+
+.campo-pesquisa-wrapper {
+
+    position: relative;
+
+}
+
+
+.icone-pesquisa {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 15px;
+
+    transform:
+        translateY(-50%);
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+}
+
+
+#pesquisa-item-categoria {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 16px 0 43px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.17);
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    color: var(--branco);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+#pesquisa-item-categoria::placeholder {
+
+    color: #5e5a54;
+
+}
+
+
+#pesquisa-item-categoria:focus {
+
+    border-color:
+        rgba(185, 149, 75, 0.6);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(185, 149, 75, 0.06);
+
+}
+
+
+/* ============================================================
+   17. SELECTS
+   ============================================================ */
+
+.filtro-categoria select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.17);
+
+    outline: none;
+
+    background:
+        #0a0a0a;
+
+    color: var(--branco-suave);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+.filtro-categoria select:hover {
+
+    border-color:
+        rgba(185, 149, 75, 0.4);
+
+}
+
+
+.filtro-categoria select:focus {
+
+    border-color:
+        var(--dourado);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(185, 149, 75, 0.06);
+
+}
+
+
+.filtro-categoria option {
+
+    background:
+        #0a0a0a;
+
+    color:
+        var(--branco);
+
+}
+
+
+/* ============================================================
+   18. CABEÇALHO DA LISTAGEM
+   ============================================================ */
+
+.cabecalho-itens {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 25px;
+
+    border-bottom:
+        1px solid
+        rgba(185, 149, 75, 0.14);
+
+}
+
+
+.titulo-listagem {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.titulo-listagem-pre {
+
+    color: var(--vermelho-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.titulo-listagem h2 {
+
+    color: var(--branco);
+
+    font-size: 31px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.contador-itens {
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================================
+   19. GRADE DE ITENS
+   ============================================================ */
+
+.grade-itens {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 24px;
+
+}
+
+
+/* ============================================================
+   20. CARD DE ITEM
+   ============================================================ */
+
+.card-item {
+
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.17);
+
+    background:
+        linear-gradient(
+            145deg,
+            #121212,
+            #080808
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+
+}
+
+
+.card-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(167, 25, 36, 0.08),
+            transparent 45%
+        );
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transicao);
+
+}
+
+
+.card-item:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(185, 149, 75, 0.43);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0, 0, 0, 0.65),
+        0 0 35px
+        rgba(125, 16, 24, 0.09);
+
+}
+
+
+.card-item:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* ============================================================
+   21. IMAGEM DO ITEM
+   ============================================================ */
+
+.card-item-imagem {
+
+    position: relative;
+
+    height: 225px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid
+        rgba(185, 149, 75, 0.12);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(125, 16, 24, 0.17),
+            transparent 62%
+        );
+
+}
+
+
+.card-item-imagem::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.08);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 50px
+        rgba(125, 16, 24, 0.12);
+
+}
+
+
+.card-item-imagem img {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 25px;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.card-item:hover
+.card-item-imagem img {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.card-item-imagem-simbolo {
+
+    position: relative;
+
+    z-index: 1;
+
+    color:
+        rgba(185, 149, 75, 0.4);
+
+    font-size: 55px;
+
+    text-shadow:
+        0 0 30px
+        rgba(167, 25, 36, 0.35);
+
+}
+
+
+/* ============================================================
+   22. RARIDADE
+   ============================================================ */
+
+.card-item-raridade {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    z-index: 3;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.25);
+
+    background:
+        rgba(3, 3, 3, 0.86);
+
+    color: var(--dourado);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+/* ============================================================
+   23. CORES DAS RARIDADES
+   ============================================================ */
+
+.card-item-raridade.raridade-comum {
+
+    color: #bdbdbd;
+
+}
+
+
+.card-item-raridade.raridade-incomum {
+
+    color: #79a978;
+
+}
+
+
+.card-item-raridade.raridade-raro {
+
+    color: #719fd2;
+
+}
+
+
+.card-item-raridade.raridade-epico {
+
+    color: #a881c7;
+
+}
+
+
+.card-item-raridade.raridade-lendario {
+
+    color: #d5a94f;
+
+}
+
+
+.card-item-raridade.raridade-mitico {
+
+    color: #d94a52;
+
+}
+
+
+/* ============================================================
+   24. CONTEÚDO DO CARD
+   ============================================================ */
+
+.card-item-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding:
+        22px 22px 20px;
+
+}
+
+
+.card-item-pre-titulo {
+
+    margin-bottom: 7px;
+
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.card-item-conteudo h3 {
+
+    color:
+        var(--branco);
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.card-item-descricao {
+
+    margin-top: 13px;
+
+    color:
+        var(--cinza);
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+}
+
+
+/* ============================================================
+   25. INFORMAÇÕES DO ITEM
+   ============================================================ */
+
+.card-item-informacoes {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: auto;
+
+    padding-top: 18px;
+
+}
+
+
+.card-item-informacoes > span:first-child {
+
+    color:
+        var(--cinza-escuro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.card-item-status {
+
+    max-width: 65%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.card-item-status.status-armazem {
+
+    color:
+        var(--dourado);
+
+}
+
+
+.card-item-status.status-jogador {
+
+    color:
+        var(--vermelho-claro);
+
+}
+
+
+/* ============================================================
+   26. ESTADO VAZIO
+   ============================================================ */
+
+.estado-vazio-categoria {
+
+    padding:
+        85px 30px;
+
+    margin-top: 10px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(185, 149, 75, 0.14);
+
+    background:
+        rgba(8, 8, 8, 0.7);
+
+}
+
+
+.estado-vazio-categoria[hidden] {
+
+    display: none;
+
+}
+
+
+.estado-vazio-icone {
+
+    margin-bottom: 20px;
+
+    color:
+        var(--dourado);
+
+    font-size: 32px;
+
+}
+
+
+.estado-vazio-pre {
+
+    color:
+        var(--vermelho-claro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.estado-vazio-categoria h3 {
+
+    margin-top: 12px;
+
+    color:
+        var(--branco);
+
+    font-size: 28px;
+
+}
+
+
+.estado-vazio-categoria p {
+
+    max-width: 500px;
+
+    margin:
+        13px auto 0;
+
+    color:
+        var(--cinza);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ============================================================
+   27. CAMINHO DO ARQUIVO
+   ============================================================ */
+
+.caminho-arquivo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    margin-top: 70px;
+
+    color:
+        var(--cinza-escuro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.caminho-arquivo strong {
+
+    color:
+        var(--dourado-escuro);
+
+}
+
+
+#caminho-categoria {
+
+    color:
+        var(--dourado);
+
+}
+
+
+/* ============================================================
+   28. RODAPÉ
+   ============================================================ */
+
+.rodape-categoria {
+
+    width: min(1500px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        0 0 35px;
+
+}
+
+
+.rodape-linha {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 149, 75, 0.3),
+            transparent
+        );
+
+}
+
+
+.rodape-conteudo {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.rodape-identidade {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.rodape-identidade span {
+
+    color:
+        var(--branco-suave);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.rodape-identidade small,
+.rodape-direitos small {
+
+    color:
+        var(--cinza-escuro);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.rodape-simbolo {
+
+    color:
+        var(--dourado);
+
+    font-size: 15px;
+
+}
+
+
+.rodape-direitos {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+}
+
+
+.rodape-direitos span {
+
+    color:
+        var(--cinza);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ============================================================
+   29. ANIMAÇÕES
+   ============================================================ */
+
+@keyframes aparecerCategoria {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.apresentacao-categoria {
+
+    animation:
+        aparecerCategoria
+        0.8s ease
+        both;
+
+}
+
+
+.painel-controle-categoria {
+
+    animation:
+        aparecerCategoria
+        0.8s ease
+        0.12s
+        both;
+
+}
+
+
+.card-item {
+
+    animation:
+        aparecerCategoria
+        0.55s ease
+        both;
+
+}
+
+
+.card-item:nth-child(2) {
+
+    animation-delay:
+        0.08s;
+
+}
+
+
+.card-item:nth-child(3) {
+
+    animation-delay:
+        0.16s;
+
+}
+
+
+.card-item:nth-child(4) {
+
+    animation-delay:
+        0.24s;
+
+}
+
+
+.card-item:nth-child(5) {
+
+    animation-delay:
+        0.32s;
+
+}
+
+
+.card-item:nth-child(6) {
+
+    animation-delay:
+        0.40s;
+
+}
+
+
+/* ============================================================
+   30. RESPONSIVIDADE — TABLET
+   ============================================================ */
+
+@media (
+    max-width: 1050px
+) {
+
+    .cabecalho-categoria {
+
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+
+    }
+
+
+    .painel-controle-categoria {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+    }
+
+
+    .campo-pesquisa-categoria {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .grade-itens {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   31. RESPONSIVIDADE — MOBILE
+   ============================================================ */
+
+@media (
+    max-width: 700px
+) {
+
+    .cabecalho-categoria {
+
+        width: 92%;
+
+        min-height: 105px;
+
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+
+        gap: 12px;
+
+    }
+
+
+    .botao-voltar {
+
+        padding:
+            10px;
+
+    }
+
+
+    .botao-voltar span:last-child {
+
+        display: none;
+
+    }
+
+
+    .identidade-linha {
+
+        font-size: 6px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .identidade-nome {
+
+        font-size: 17px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .identidade-subtitulo {
+
+        font-size: 6px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .logo-categoria {
+
+        width: 52px;
+
+        height: 52px;
+
+    }
+
+
+    .logo-categoria img {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .conteudo-categoria {
+
+        width: 92%;
+
+        padding:
+            55px 0 70px;
+
+    }
+
+
+    .apresentacao-categoria {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .marcacao-categoria {
+
+        gap: 10px;
+
+    }
+
+
+    .marcacao-linha {
+
+        width: 35px;
+
+    }
+
+
+    .marcacao-texto {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    #titulo-categoria {
+
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                60px
+            );
+
+    }
+
+
+    .descricao-categoria {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .painel-controle-categoria {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            18px;
+
+    }
+
+
+    .campo-pesquisa-categoria {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .cabecalho-itens {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .titulo-listagem h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .grade-itens {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .card-item {
+
+        min-height:
+            370px;
+
+    }
+
+
+    .rodape-conteudo {
+
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+
+    }
+
+
+    .rodape-identidade {
+
+        align-items: center;
+
+    }
+
+
+    .rodape-direitos {
+
+        align-items: center;
+
+    }
+
+}
+
+
+/* ============================================================
+   32. MOBILE PEQUENO
+   ============================================================ */
+
+@media (
+    max-width: 430px
+) {
+
+    .logo-categoria {
+
+        display: none;
+
+    }
+
+
+    .cabecalho-categoria {
+
+        grid-template-columns:
+            auto
+            1fr;
+
+    }
+
+
+    .identidade-categoria {
+
+        align-items:
+            flex-end;
+
+        text-align:
+            right;
+
+    }
+
+
+    .card-item-imagem {
+
+        height: 205px;
+
+    }
+
+
+    .card-item-conteudo h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .card-item-descricao {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* ============================================================
+   33. ACESSIBILIDADE — REDUZIR MOVIMENTO
+   ============================================================ */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}

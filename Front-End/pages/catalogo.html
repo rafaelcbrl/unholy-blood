@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =========================================================
+         CONFIGURAÇÕES DO DOCUMENTO
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Coleção oficial da guilda Unholy Blood."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>
+        Unholy Blood | Coleção
+    </title>
+
+
+    <!-- =========================================================
+         FOLHA DE ESTILOS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/catalogo.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         FUNDO GERAL
+    ========================================================== -->
+
+    <div class="fundo-catalogo">
+
+        <div class="fundo-brilho fundo-brilho-1"></div>
+
+        <div class="fundo-brilho fundo-brilho-2"></div>
+
+        <div class="fundo-brilho fundo-brilho-3"></div>
+
+        <div class="textura-fundo"></div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         CABEÇALHO
+    ========================================================== -->
+
+    <header class="cabecalho-catalogo">
+
+
+        <!-- -----------------------------------------------------
+             VOLTAR
+        ------------------------------------------------------ -->
+
+        <a
+            href="../index.html"
+            class="botao-voltar"
+            aria-label="Voltar para a página inicial"
+        >
+
+            <span class="botao-voltar-seta">
+                ←
+            </span>
+
+            <span class="botao-voltar-texto">
+                VOLTAR
+            </span>
+
+        </a>
+
+
+
+        <!-- -----------------------------------------------------
+             IDENTIDADE CENTRAL
+        ------------------------------------------------------ -->
+
+        <div class="identidade-catalogo">
+
+            <span class="identidade-pre-titulo">
+                ARQUIVO OFICIAL
+            </span>
+
+            <h1>
+                UNHOLY BLOOD
+            </h1>
+
+            <span class="identidade-subtitulo">
+                COLLECTION
+            </span>
+
+        </div>
+
+
+
+        <!-- -----------------------------------------------------
+             LOGO
+        ------------------------------------------------------ -->
+
+        <a
+            href="../index.html"
+            class="logo-catalogo"
+            aria-label="Unholy Blood"
+        >
+
+            <img
+                src="../../Imagens/logo/unholy-blood.png"
+                alt="Símbolo da Unholy Blood"
+            >
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+    ========================================================== -->
+
+    <main class="conteudo-catalogo">
+
+
+        <!-- =====================================================
+             CABEÇALHO DA COLEÇÃO
+        ====================================================== -->
+
+        <section
+            class="introducao-catalogo"
+            aria-labelledby="titulo-catalogo"
+        >
+
+
+            <!-- -------------------------------------------------
+                 IDENTIFICAÇÃO
+            -------------------------------------------------- -->
+
+            <span class="secao-pre-titulo">
+                O LEGADO DA GUILDA
+            </span>
+
+
+
+            <!-- -------------------------------------------------
+                 TÍTULO
+            -------------------------------------------------- -->
+
+            <h2
+                id="titulo-catalogo"
+                class="titulo-catalogo"
+            >
+
+                A Coleção
+
+                <span>
+                    Unholy Blood
+                </span>
+
+            </h2>
+
+
+
+            <!-- -------------------------------------------------
+                 DESCRIÇÃO
+            -------------------------------------------------- -->
+
+            <p class="descricao-catalogo">
+
+                Tudo aquilo que pertence ao nosso legado,
+                registrado em um único arquivo.
+
+                <br>
+
+                Pokémon, armas, armaduras, relíquias,
+                artefatos e tudo aquilo que ainda será
+                descoberto.
+
+            </p>
+
+
+
+            <!-- -------------------------------------------------
+                 DIVISOR
+            -------------------------------------------------- -->
+
+            <div class="divisor-catalogo">
+
+                <span></span>
+
+                <span class="divisor-simbolo">
+                    ◆
+                </span>
+
+                <span></span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PAINEL DE CONTROLE
+        ====================================================== -->
+
+        <section
+            class="controle-catalogo"
+            aria-label="Controles da coleção"
+        >
+
+
+            <!-- -------------------------------------------------
+                 PESQUISA
+            -------------------------------------------------- -->
+
+            <div class="campo-pesquisa">
+
+                <label
+                    for="pesquisa-item"
+                    class="campo-label"
+                >
+                    PESQUISAR NO ARQUIVO
+                </label>
+
+                <div class="campo-pesquisa-container">
+
+                    <span class="campo-pesquisa-icone">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="search"
+                        id="pesquisa-item"
+                        name="pesquisa-item"
+                        placeholder="Pesquisar item..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- -------------------------------------------------
+                 FILTRO DE RARIDADE
+            -------------------------------------------------- -->
+
+            <div class="campo-filtro">
+
+                <label
+                    for="filtro-raridade"
+                    class="campo-label"
+                >
+                    RARIDADE
+                </label>
+
+                <select
+                    id="filtro-raridade"
+                    name="filtro-raridade"
+                >
+
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                    <option value="comum">
+                        Comum
+                    </option>
+
+                    <option value="incomum">
+                        Incomum
+                    </option>
+
+                    <option value="raro">
+                        Raro
+                    </option>
+
+                    <option value="epico">
+                        Épico
+                    </option>
+
+                    <option value="lendario">
+                        Lendário
+                    </option>
+
+                    <option value="mitico">
+                        Mítico
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- -------------------------------------------------
+                 FILTRO DE TEMPORADA
+            -------------------------------------------------- -->
+
+            <div class="campo-filtro">
+
+                <label
+                    for="filtro-temporada"
+                    class="campo-label"
+                >
+                    TEMPORADA
+                </label>
+
+                <select
+                    id="filtro-temporada"
+                    name="filtro-temporada"
+                >
+
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- -------------------------------------------------
+                 FILTRO DE STATUS
+            -------------------------------------------------- -->
+
+            <div class="campo-filtro">
+
+                <label
+                    for="filtro-status"
+                    class="campo-label"
+                >
+                    STATUS
+                </label>
+
+                <select
+                    id="filtro-status"
+                    name="filtro-status"
+                >
+
+                    <option value="todos">
+                        Todos
+                    </option>
+
+                    <option value="armazem">
+                        No Armazém
+                    </option>
+
+                    <option value="posse">
+                        Em posse de jogador
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CATEGORIAS
+             
+             IMPORTANTE:
+             Estas categorias são apenas uma estrutura visual
+             inicial.
+
+             Posteriormente serão carregadas dinamicamente
+             pelo Back-End.
+        ====================================================== -->
+
+        <section
+            class="secao-categorias"
+            aria-labelledby="titulo-categorias"
+        >
+
+
+            <!-- -------------------------------------------------
+                 CABEÇALHO
+            -------------------------------------------------- -->
+
+            <div class="cabecalho-categorias">
+
+                <div>
+
+                    <span class="secao-pre-titulo">
+                        ARQUIVO CLASSIFICADO
+                    </span>
+
+                    <h2
+                        id="titulo-categorias"
+                    >
+                        Categorias
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="contador-categorias"
+                    id="contador-categorias"
+                >
+                    0 categorias
+                </span>
+
+            </div>
+
+
+
+            <!-- -------------------------------------------------
+                 GRADE DAS CATEGORIAS
+            -------------------------------------------------- -->
+
+            <div
+                class="grade-categorias"
+                id="grade-categorias"
+            >
+
+
+                <!-- =================================================
+                     ESTADO VAZIO
+                     
+                     Será substituído pelo JavaScript quando o
+                     Back-End começar a fornecer categorias.
+                ================================================== -->
+
+                <div
+                    class="estado-vazio"
+                    id="estado-vazio"
+                >
+
+                    <div class="estado-vazio-simbolo">
+                        ✦
+                    </div>
+
+                    <h3>
+                        O arquivo ainda está vazio.
+                    </h3>
+
+                    <p>
+
+                        Nenhuma categoria foi registrada
+                        no acervo da Unholy Blood.
+
+                        <br>
+
+                        Novos registros aparecerão aqui
+                        quando forem adicionados ao arquivo.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             INFORMAÇÕES DO ARQUIVO
+        ====================================================== -->
+
+        <section
+            class="informacoes-arquivo"
+            aria-label="Informações do arquivo"
+        >
+
+            <div class="informacao">
+
+                <span class="informacao-numero">
+                    00
+                </span>
+
+                <span class="informacao-texto">
+                    CATEGORIAS
+                </span>
+
+            </div>
+
+
+            <div class="informacao">
+
+                <span class="informacao-numero">
+                    00
+                </span>
+
+                <span class="informacao-texto">
+                    ITENS REGISTRADOS
+                </span>
+
+            </div>
+
+
+            <div class="informacao">
+
+                <span class="informacao-numero">
+                    00
+                </span>
+
+                <span class="informacao-texto">
+                    RELÍQUIAS
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         RODAPÉ
+    ========================================================== -->
+
+    <footer class="rodape-catalogo">
+
+
+        <div class="rodape-linha"></div>
+
+
+        <div class="rodape-identidade">
+
+            <img
+                src="../../Imagens/logo/unholy-blood.png"
+                alt="Símbolo da Unholy Blood"
+            >
+
+            <div>
+
+                <strong>
+                    UNHOLY BLOOD
+                </strong>
+
+                <span>
+                    GUILD ARCHIVE
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <p class="rodape-frase">
+
+            Onde a Graça nos abandonou,
+            nosso sangue despertou.
+
+        </p>
+
+
+        <div class="rodape-final">
+
+            <span>
+                ARQUIVO OFICIAL DA GUILDA
+            </span>
+
+            <span>
+                ◆
+            </span>
+
+            <span>
+                UNHOLY BLOOD
+            </span>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script
+        src="../js/catalogo.js"
+    ></script>
+
+
+</body>
+
+</html>

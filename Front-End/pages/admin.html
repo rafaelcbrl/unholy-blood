@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Painel administrativo da guilda Unholy Blood."
+    >
+
+    <title>
+        Administração | Unholy Blood
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================================================
+         FUNDO
+         ============================================================ -->
+
+    <div
+        class="fundo-admin"
+        aria-hidden="true"
+    ></div>
+
+
+    <div
+        class="textura-admin"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- ============================================================
+         CABEÇALHO
+         ============================================================ -->
+
+    <header class="cabecalho-admin">
+
+
+        <!-- ========================================================
+             BOTÃO VOLTAR
+             ======================================================== -->
+
+        <a
+            href="../index.html"
+            class="voltar-admin"
+        >
+
+            <span aria-hidden="true">
+                ←
+            </span>
+
+            Voltar
+
+        </a>
+
+
+
+        <!-- ========================================================
+             IDENTIDADE
+             ======================================================== -->
+
+        <div class="identidade-admin">
+
+
+            <span class="pre-titulo-admin">
+                UNHOLY BLOOD
+            </span>
+
+
+            <h1>
+                ADMINISTRAÇÃO
+            </h1>
+
+
+            <span class="subtitulo-admin">
+                ARQUIVO OFICIAL DA GUILDA
+            </span>
+
+
+        </div>
+
+
+
+        <!-- ========================================================
+             ESPAÇO DO CABEÇALHO
+             ======================================================== -->
+
+        <div
+            class="espaco-cabecalho"
+            aria-hidden="true"
+        ></div>
+
+
+    </header>
+
+
+
+    <!-- ============================================================
+         CONTEÚDO PRINCIPAL
+         ============================================================ -->
+
+    <main class="conteudo-admin">
+
+
+        <!-- ========================================================
+             INTRODUÇÃO
+             ======================================================== -->
+
+        <section class="introducao-admin">
+
+
+            <span class="etiqueta-admin">
+                PAINEL ADMINISTRATIVO
+            </span>
+
+
+            <h2>
+                Gerenciar o Arquivo
+            </h2>
+
+
+            <p>
+                Crie, organize e mantenha os registros
+                pertencentes à coleção da Unholy Blood.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ========================================================
+             OPÇÕES PRINCIPAIS
+             ======================================================== -->
+
+        <section
+            class="painel-opcoes-admin"
+            aria-label="Ações administrativas"
+        >
+
+
+            <!-- ====================================================
+                 CRIAR CATEGORIA
+                 ==================================================== -->
+
+            <button
+                type="button"
+                class="opcao-admin"
+                id="botao-criar-categoria"
+            >
+
+
+                <span
+                    class="icone-opcao-admin"
+                    aria-hidden="true"
+                >
+                    +
+                </span>
+
+
+                <span class="conteudo-opcao-admin">
+
+
+                    <span class="titulo-opcao-admin">
+                        Criar Categoria
+                    </span>
+
+
+                    <span class="descricao-opcao-admin">
+                        Crie uma nova categoria para organizar
+                        os itens da coleção.
+                    </span>
+
+
+                </span>
+
+
+                <span
+                    class="seta-opcao-admin"
+                    aria-hidden="true"
+                >
+                    →
+                </span>
+
+
+            </button>
+
+
+
+            <!-- ====================================================
+                 CADASTRAR ITEM
+                 ==================================================== -->
+
+            <button
+                type="button"
+                class="opcao-admin"
+                id="botao-cadastrar-item"
+            >
+
+
+                <span
+                    class="icone-opcao-admin"
+                    aria-hidden="true"
+                >
+                    ◆
+                </span>
+
+
+                <span class="conteudo-opcao-admin">
+
+
+                    <span class="titulo-opcao-admin">
+                        Cadastrar Item
+                    </span>
+
+
+                    <span class="descricao-opcao-admin">
+                        Adicione um novo item a uma categoria
+                        existente.
+                    </span>
+
+
+                </span>
+
+
+                <span
+                    class="seta-opcao-admin"
+                    aria-hidden="true"
+                >
+                    →
+                </span>
+
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ========================================================
+             MENSAGEM DO SISTEMA
+             ======================================================== -->
+
+        <div
+            class="mensagem-admin"
+            id="mensagem-admin"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+
+
+        <!-- ========================================================
+             ÁREA DINÂMICA DOS FORMULÁRIOS
+             
+             O JavaScript vai inserir aqui:
+             
+             - formulário de categoria
+             - formulário de item
+             - formulário de edição
+             ======================================================== -->
+
+        <section
+            class="area-cadastro-admin"
+            id="area-cadastro-admin"
+            aria-live="polite"
+        ></section>
+
+
+
+        <!-- ========================================================
+             CATEGORIAS REGISTRADAS
+             ======================================================== -->
+
+        <section class="secao-registros-admin">
+
+
+            <div class="cabecalho-secao-admin">
+
+
+                <div>
+
+
+                    <span class="etiqueta-admin">
+                        ARQUIVO
+                    </span>
+
+
+                    <h2>
+                        Categorias Registradas
+                    </h2>
+
+
+                </div>
+
+
+                <span
+                    class="contador-registros-admin"
+                    id="contador-categorias-admin"
+                >
+                    0 categorias
+                </span>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 GRADE DAS CATEGORIAS
+                 ==================================================== -->
+
+            <div
+                class="grade-registros-admin"
+                id="lista-categorias-admin"
+            ></div>
+
+
+
+            <!-- ====================================================
+                 ESTADO VAZIO
+                 ==================================================== -->
+
+            <div
+                class="estado-vazio-admin"
+                id="estado-vazio-categorias"
+            >
+
+
+                <span
+                    class="estado-vazio-icone"
+                    aria-hidden="true"
+                >
+                    ◇
+                </span>
+
+
+                <h3>
+                    Nenhuma categoria registrada
+                </h3>
+
+
+                <p>
+                    Crie sua primeira categoria para começar
+                    a construir o arquivo da guilda.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ========================================================
+             ITENS REGISTRADOS
+             ======================================================== -->
+
+        <section class="secao-registros-admin">
+
+
+            <div class="cabecalho-secao-admin">
+
+
+                <div>
+
+
+                    <span class="etiqueta-admin">
+                        REGISTROS
+                    </span>
+
+
+                    <h2>
+                        Itens Cadastrados
+                    </h2>
+
+
+                </div>
+
+
+                <span
+                    class="contador-registros-admin"
+                    id="contador-itens-admin"
+                >
+                    0 itens
+                </span>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 GRADE DOS ITENS
+                 ==================================================== -->
+
+            <div
+                class="grade-registros-admin"
+                id="lista-itens-admin"
+            ></div>
+
+
+
+            <!-- ====================================================
+                 ESTADO VAZIO
+                 ==================================================== -->
+
+            <div
+                class="estado-vazio-admin"
+                id="estado-vazio-itens"
+            >
+
+
+                <span
+                    class="estado-vazio-icone"
+                    aria-hidden="true"
+                >
+                    ◇
+                </span>
+
+
+                <h3>
+                    Nenhum item registrado
+                </h3>
+
+
+                <p>
+                    Os itens cadastrados aparecerão aqui.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================================================
+         RODAPÉ
+         ============================================================ -->
+
+    <footer class="rodape-admin">
+
+
+        <p>
+            UNHOLY BLOOD
+        </p>
+
+
+        <span>
+            ARQUIVO OFICIAL DA GUILDA
+        </span>
+
+
+    </footer>
+
+
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+
+    <script src="../js/admin.js"></script>
+
+
+</body>
+
+</html>
